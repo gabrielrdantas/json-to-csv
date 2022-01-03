@@ -42,6 +42,13 @@ const DiffChecker: React.FC = () => {
     setChangedText('');
   }, []);
 
+  const hasResultOriginalAndChanged = (
+    originalData: JSX.Element[],
+    changedData: JSX.Element[],
+  ) => {
+    return originalData.length > 0 && changedData.length > 0;
+  };
+
   useEffect(() => {
     if (originalText === changedText) {
       setResultOriginalText([]);
@@ -63,13 +70,9 @@ const DiffChecker: React.FC = () => {
   }, [originalText, changedText]);
 
   useEffect(() => {
-    if (resultOriginalText.length > 0 && resultChangedText.length > 0) {
-      setTimeout(() => {
-        setCanShowResult(true);
-      }, 500);
-    } else {
-      setCanShowResult(false);
-    }
+    setCanShowResult(
+      hasResultOriginalAndChanged(resultOriginalText, resultChangedText),
+    );
   }, [resultOriginalText, resultChangedText]);
 
   const defineOriginalText = (original: string, changed: string) => {
