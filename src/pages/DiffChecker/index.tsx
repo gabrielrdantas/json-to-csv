@@ -1,5 +1,4 @@
 import React, { useCallback, useState, ChangeEvent, useEffect } from 'react';
-import { Helmet } from 'react-helmet';
 
 import styled from 'styled-components';
 import Header from '../../components/Header';
@@ -7,11 +6,20 @@ import Footer from '../../components/Footer';
 import ContainerInfo from '../../components/Info';
 
 import Content from '../../components/Content';
+import StatusDiff from '../../components/StatusDiff';
 import Seo from '../../components/Seo';
 
+interface statusDiff {
+  isDiff: boolean;
+  size: number;
+}
+
 const DiffChecker: React.FC = () => {
+  const [canShowResult, setCanShowResult] = useState(false);
   const [originalText, setOriginalText] = useState('');
   const [changedText, setChangedText] = useState('');
+  const [itemsDiffOriginal, setItemsDiffOriginal] = useState<statusDiff[]>([]);
+  const [itemsDiffChanged, setItemsDiffChanged] = useState<statusDiff[]>([]);
 
   const [resultOriginalText, setResultOriginalText] = useState<JSX.Element[]>(
     [],
@@ -41,39 +49,47 @@ const DiffChecker: React.FC = () => {
       return;
     }
     if (originalText !== changedText) {
-      setResultOriginalText(defineOriginalText(originalText, changedText));
-      setResultChangedText(defineChangedText(originalText, changedText));
+      if (originalText) {
+        setResultOriginalText(defineOriginalText(originalText, changedText));
+      } else {
+        setResultOriginalText([]);
+      }
+      if (changedText) {
+        setResultChangedText(defineChangedText(originalText, changedText));
+      } else {
+        setResultChangedText([]);
+      }
     }
   }, [originalText, changedText]);
 
-  const defineChangedText = (original: string, changed: string) => {
-    const originalTextArray = original.replaceAll(/\n/g, '\n ').split('\n');
-    const changedTextArray = changed.replaceAll(/\n/g, '\n ').split('\n');
-    return changedTextArray.map((text, index) => {
-      if (text !== originalTextArray[index]) {
-        return text === ' ' ? (
-          <ChangedDiv>
-            <span style={{ visibility: 'hidden' }}>vazio</span>
-          </ChangedDiv>
-        ) : (
-          <ChangedDiv>{text}</ChangedDiv>
-        );
-      }
-      return text !== ' ' ? (
-        <div>{text}</div>
-      ) : (
-        <div>
-          <span style={{ visibility: 'hidden' }}>vazio</span>
-        </div>
-      );
-    });
-  };
+  useEffect(() => {
+    if (resultOriginalText.length > 0 && resultChangedText.length > 0) {
+      setTimeout(() => {
+        setCanShowResult(true);
+      }, 500);
+    } else {
+      setCanShowResult(false);
+    }
+  }, [resultOriginalText, resultChangedText]);
 
   const defineOriginalText = (original: string, changed: string) => {
     const originalTextArray = original.replaceAll(/\n/g, '\n ').split('\n');
     const changedTextArray = changed.replaceAll(/\n/g, '\n ').split('\n');
-    return originalTextArray.map((text, index) => {
+    const countItemsDiff: statusDiff[] = [];
+    const response = originalTextArray.map((text, index) => {
       if (text !== changedTextArray[index]) {
+        if (
+          index === 0 ||
+          countItemsDiff[countItemsDiff.length - 1].isDiff === false
+        ) {
+          countItemsDiff.push({
+            isDiff: true,
+            size: 1,
+          });
+        } else {
+          countItemsDiff[countItemsDiff.length - 1].size += 1;
+        }
+
         return text === ' ' ? (
           <OriginalDiv>
             <span style={{ visibility: 'hidden' }}>vazio</span>
@@ -82,6 +98,19 @@ const DiffChecker: React.FC = () => {
           <OriginalDiv>{text}</OriginalDiv>
         );
       }
+
+      if (
+        index === 0 ||
+        countItemsDiff[countItemsDiff.length - 1].isDiff === true
+      ) {
+        countItemsDiff.push({
+          isDiff: false,
+          size: 1,
+        });
+      } else {
+        countItemsDiff[countItemsDiff.length - 1].size += 1;
+      }
+
       return text !== ' ' ? (
         <div>{text}</div>
       ) : (
@@ -90,6 +119,58 @@ const DiffChecker: React.FC = () => {
         </div>
       );
     });
+
+    setItemsDiffOriginal(countItemsDiff);
+    return response;
+  };
+
+  const defineChangedText = (original: string, changed: string) => {
+    const originalTextArray = original.replaceAll(/\n/g, '\n ').split('\n');
+    const changedTextArray = changed.replaceAll(/\n/g, '\n ').split('\n');
+    const countItemsDiff: statusDiff[] = [];
+    const response = changedTextArray.map((text, index) => {
+      if (text !== originalTextArray[index]) {
+        if (
+          index === 0 ||
+          countItemsDiff[countItemsDiff.length - 1].isDiff === false
+        ) {
+          countItemsDiff.push({
+            isDiff: true,
+            size: 1,
+          });
+        } else {
+          countItemsDiff[countItemsDiff.length - 1].size += 1;
+        }
+        return text === ' ' ? (
+          <ChangedDiv>
+            <span style={{ visibility: 'hidden' }}>vazio</span>
+          </ChangedDiv>
+        ) : (
+          <ChangedDiv>{text}</ChangedDiv>
+        );
+      }
+      if (
+        index === 0 ||
+        countItemsDiff[countItemsDiff.length - 1].isDiff === true
+      ) {
+        countItemsDiff.push({
+          isDiff: false,
+          size: 1,
+        });
+      } else {
+        countItemsDiff[countItemsDiff.length - 1].size += 1;
+      }
+      return text !== ' ' ? (
+        <div>{text}</div>
+      ) : (
+        <div>
+          <span style={{ visibility: 'hidden' }}>vazio</span>
+        </div>
+      );
+    });
+
+    setItemsDiffChanged(countItemsDiff);
+    return response;
   };
 
   return (
@@ -114,7 +195,7 @@ const DiffChecker: React.FC = () => {
           },
         }}
       />
-      <Header itemSelected={3} />
+      <Header title="Diff checker json online" itemSelected={3} />
       <Content>
         <Container>
           <AreaDiv>
@@ -139,23 +220,32 @@ const DiffChecker: React.FC = () => {
             </ContainerText>
           </AreaDiv>
         </Container>
-        <ContainerResult>
-          <AreaDiv>
-            <SubtitleContainer>
-              <Subtitle>Result Original JSON</Subtitle>
-              <Subtitle>Result Other JSON</Subtitle>
-            </SubtitleContainer>
-            <ContainerText>
-              <ContainerInput>
-                <InputData>{resultOriginalText}</InputData>
-              </ContainerInput>
 
-              <ContainerInput>
-                <InputData>{resultChangedText}</InputData>
-              </ContainerInput>
-            </ContainerText>
-          </AreaDiv>
-        </ContainerResult>
+        {canShowResult && (
+          <>
+            <ContainerResult>
+              <AreaDiv>
+                <SubtitleContainer>
+                  <Subtitle>Result Original JSON</Subtitle>
+                  <Subtitle>Result Other JSON</Subtitle>
+                </SubtitleContainer>
+                <ContainerText>
+                  <ContainerInput>
+                    <InputData>{resultOriginalText}</InputData>
+                  </ContainerInput>
+
+                  <ContainerInput>
+                    <InputData>{resultChangedText}</InputData>
+                  </ContainerInput>
+                </ContainerText>
+              </AreaDiv>
+              <ContainerStatusDiff>
+                <StatusDiff color="#c8f0da" items={itemsDiffOriginal} />
+                <StatusDiff color="#ffcbbd" items={itemsDiffChanged} />
+              </ContainerStatusDiff>
+            </ContainerResult>
+          </>
+        )}
 
         <ContainerInfo />
       </Content>
@@ -176,6 +266,7 @@ const Container = styled.div`
 const ContainerResult = styled.div`
   display: flex;
   margin: 20px;
+  align-items: end;
 `;
 
 const ContainerInput = styled.div`
@@ -195,6 +286,7 @@ const InputData = styled.pre`
   flex: 1;
   padding: 20px;
   min-height: 300px;
+  overflow: auto;
 `;
 
 const InputDataTextarea = styled.textarea`
@@ -238,4 +330,9 @@ const AreaDiv = styled.div`
 
 const SubtitleContainer = styled.div`
   display: flex;
+`;
+
+const ContainerStatusDiff = styled.div`
+  display: flex;
+  margin-left: 5px;
 `;

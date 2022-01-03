@@ -1,5 +1,4 @@
 import React, { useCallback, useState, ChangeEvent } from 'react';
-import { Helmet } from 'react-helmet';
 
 import styled from 'styled-components';
 import Header from '../../components/Header';
@@ -87,7 +86,7 @@ const ConvertJsonToCsv: React.FC = () => {
           },
         }}
       />
-      <Header itemSelected={1} />
+      <Header title="Convert JSON to CSV online" itemSelected={1} />
       <Content>
         <Subtitle>Input JSON</Subtitle>
         <Container>

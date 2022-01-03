@@ -1,5 +1,4 @@
 import React, { useCallback, ChangeEvent } from 'react';
-import { Helmet } from 'react-helmet';
 
 import styled from 'styled-components';
 import pdfMake from 'pdfmake/build/pdfmake.js';
@@ -69,9 +68,9 @@ const ConvertJsonToPdf: React.FC = () => {
           },
         }}
       />
-      <Header itemSelected={2} />
+      <Header title="Convert JSON to PDF online" itemSelected={2} />
       <Content>
-        <Subtitle>Input JSON</Subtitle>
+        <Subtitle>Convert JSON to PDF online</Subtitle>
         <Container>
           <InputData onChange={onChangeJson} />
         </Container>
@@ -89,7 +88,7 @@ const Wrapper = styled.div``;
 const Container = styled.div`
   background: #fff;
   display: flex;
-  height: 50vh;
+  height: 20vh;
 `;
 
 const InputData = styled.textarea`
