@@ -9,6 +9,7 @@ import ContainerInfo from '../../components/Info';
 import MenuOptions from '../../components/MenuOptions';
 import Seo from '../../components/Seo';
 import RelatedLinks from '../../components/RelatedLinks';
+import Schema from '../../components/Schema';
 
 declare global {
   interface Navigator {
@@ -72,19 +73,29 @@ const ConvertJsonToCsv: React.FC = () => {
         description="Convert JSON to CSV online, this page is simple, fast and practical!"
         ogDescription="Convert JSON to CSV online, this page is simple, fast and practical! Come meet us!"
         ogTitle="Convering JSON to CSV simply!"
-        schema={{
+        canonical="https://convertjsononline.com"
+      />
+      <Schema
+        data={{
           '@context': 'http://schema.org/',
-          '@type': 'WebSite',
-          name: 'Convert JSON to CSV online',
-          image: '',
-          url: '',
-          description:
-            'Convert JSON to CSV online, this page is simple, fast and practical!',
-          isPartOf: {
-            '@type': 'Website',
-            name: '',
-            url: '',
-          },
+          '@type': 'Schema',
+          '@graph': [
+            {
+              '@id': `https://convertjsononline.com#webpage`,
+              '@type': 'WebPage',
+              name: 'Convert JSON to CSV online',
+              image: `https://convertjsononline.com#primaryimage`,
+              url: 'https://convertjsononline.com/json-to-csv',
+              description:
+                'Convert JSON to CSV online, this page is simple, fast and practical!',
+              isPartOf: {
+                '@id': 'Website',
+              },
+              mainEntityOfPage: {
+                '@id': '#website',
+              },
+            },
+          ],
         }}
       />
       <Header title="Convert JSON to CSV online" itemSelected={1} />

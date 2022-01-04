@@ -7,6 +7,7 @@ import ContainerInfo from '../../components/Info';
 
 import Content from '../../components/Content';
 import Seo from '../../components/Seo';
+import Schema from '../../components/Schema';
 
 import RelatedLinks from '../../components/RelatedLinks';
 
@@ -44,19 +45,29 @@ const JsonFormatter: React.FC = () => {
         description="Formatter json online, this page is simple, fast and practical!"
         ogDescription="Break line and formatter json online, this page is simple, fast and practical! Come meet us!"
         ogTitle="formatter json online simply!"
-        schema={{
+        canonical="https://convertjsononline.com"
+      />
+      <Schema
+        data={{
           '@context': 'http://schema.org/',
-          '@type': 'WebSite',
-          name: 'Formatter online JSON',
-          image: '',
-          url: '',
-          description:
-            'Formatter json online, this page is simple, fast and practical!',
-          isPartOf: {
-            '@type': 'Website',
-            name: '',
-            url: '',
-          },
+          '@type': 'Schema',
+          '@graph': [
+            {
+              '@id': `https://convertjsononline.com#webpage`,
+              '@type': 'WebPage',
+              name: 'Formatter online JSON',
+              image: `https://convertjsononline.com#primaryimage`,
+              url: 'https://convertjsononline.com',
+              description:
+                'Formatter json online, this page is simple, fast and practical!',
+              isPartOf: {
+                '@id': 'Website',
+              },
+              mainEntityOfPage: {
+                '@id': '#website',
+              },
+            },
+          ],
         }}
       />
       <Header title="Formatter and converting json online" itemSelected={0} />

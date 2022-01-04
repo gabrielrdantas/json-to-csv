@@ -10,6 +10,7 @@ import Content from '../../components/Content';
 import ContainerInfo from '../../components/Info';
 import RelatedLinks from '../../components/RelatedLinks';
 import Seo from '../../components/Seo';
+import Schema from '../../components/Schema';
 
 const ConvertJsonToPdf: React.FC = () => {
   const convertToPdf = (json: JSON) => {
@@ -54,19 +55,29 @@ const ConvertJsonToPdf: React.FC = () => {
         description="Convert JSON to PDF online, this page is simple, fast and practical!"
         ogDescription="Convert JSON to PDF online, this page is simple, fast and practical! Come meet us!"
         ogTitle="Convering JSON to PDF simply!"
-        schema={{
+        canonical="https://convertjsononline.com/json-to-pdf"
+      />
+      <Schema
+        data={{
           '@context': 'http://schema.org/',
-          '@type': 'WebSite',
-          name: 'Convert JSON to PDF online',
-          image: '',
-          url: '',
-          description:
-            'Convert JSON to PDF online, this page is simple, fast and practical!',
-          isPartOf: {
-            '@type': 'Website',
-            name: '',
-            url: '',
-          },
+          '@type': 'Schema',
+          '@graph': [
+            {
+              '@id': `https://convertjsononline.com#webpage`,
+              '@type': 'WebPage',
+              name: 'Convert JSON to PDF online',
+              image: `https://convertjsononline.com#primaryimage`,
+              url: 'https://convertjsononline.com/json-to-pdf',
+              description:
+                'Convert JSON to PDF online, this page is simple, fast and practical!',
+              isPartOf: {
+                '@id': 'Website',
+              },
+              mainEntityOfPage: {
+                '@id': '#website',
+              },
+            },
+          ],
         }}
       />
       <Header title="Convert JSON to PDF online" itemSelected={2} />

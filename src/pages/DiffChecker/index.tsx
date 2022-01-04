@@ -11,6 +11,8 @@ import Seo from '../../components/Seo';
 
 import RelatedLinks from '../../components/RelatedLinks';
 
+import Schema from '../../components/Schema';
+
 interface statusDiff {
   isDiff: boolean;
   size: number;
@@ -185,19 +187,29 @@ const DiffChecker: React.FC = () => {
         description="Checker diff json online, this page is simple, fast and practical!"
         ogDescription="Checker diff online, this page is simple, fast and practical! Come meet us!"
         ogTitle="Checker diff simply!"
-        schema={{
+        canonical="https://convertjsononline.com/json-diff-checker"
+      />
+      <Schema
+        data={{
           '@context': 'http://schema.org/',
-          '@type': 'WebSite',
-          name: 'Checker diff online',
-          image: '',
-          url: '',
-          description:
-            'Checker diff online, this page is simple, fast and practical!',
-          isPartOf: {
-            '@type': 'Website',
-            name: '',
-            url: '',
-          },
+          '@type': 'Schema',
+          '@graph': [
+            {
+              '@id': `https://convertjsononline.com#webpage`,
+              '@type': 'WebPage',
+              name: 'Checker diff online',
+              image: `https://convertjsononline.com#primaryimage`,
+              url: 'https://convertjsononline.com/json-diff-checker',
+              description:
+                'Checker diff online, this page is simple, fast and practical!',
+              isPartOf: {
+                '@id': 'Website',
+              },
+              mainEntityOfPage: {
+                '@id': '#website',
+              },
+            },
+          ],
         }}
       />
       <Header title="Diff checker json online" itemSelected={3} />
