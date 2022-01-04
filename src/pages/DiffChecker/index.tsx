@@ -300,12 +300,12 @@ const Wrapper = styled.div``;
 
 const Container = styled.div`
   display: flex;
-  margin: 0 20px;
+  margin: 0;
 `;
 
 const ContainerResult = styled.div`
   display: flex;
-  margin: 20px;
+  margin: 20px 0;
   align-items: end;
 `;
 

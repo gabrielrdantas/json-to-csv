@@ -72,6 +72,7 @@ const JsonFormatter: React.FC = () => {
       />
       <Header title="Formatter and converting json online" itemSelected={0} />
       <Content>
+        <Subtitle>Formatter and converting json online</Subtitle>
         <MenuOptionsContainer>
           <MenuOptions
             onClickDownload={() => {
@@ -122,14 +123,14 @@ export default JsonFormatter;
 const Wrapper = styled.div``;
 
 const MenuOptionsContainer = styled.div`
-  margin: 0 20px;
+  margin: 0;
 `;
 
 const Container = styled.div`
   background: #fff;
   display: flex;
   height: 50vh;
-  margin: 0 20px;
+  margin: 0;
 `;
 
 const InputData = styled.textarea`
@@ -156,4 +157,9 @@ const ResultFormatted = styled.pre`
   width: 50%;
   word-break: break-all;
   overflow: auto;
+`;
+const Subtitle = styled.h2`
+  font-size: 26px;
+  color: #fff;
+  margin: 20px 0;
 `;
