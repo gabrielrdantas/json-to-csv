@@ -129,7 +129,7 @@ const MenuOptionsContainer = styled.div`
 const Container = styled.div`
   background: #fff;
   display: flex;
-  height: 50vh;
+  height: 30vh;
   margin: 0;
 `;
 
