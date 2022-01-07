@@ -3,7 +3,6 @@ import React, { useCallback, useState, ChangeEvent, useEffect } from 'react';
 import styled from 'styled-components';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
-import ContainerInfo from '../../components/Info';
 
 import Content from '../../components/Content';
 import StatusDiff from '../../components/StatusDiff';
@@ -12,6 +11,7 @@ import Seo from '../../components/Seo';
 import RelatedLinks from '../../components/RelatedLinks';
 
 import Schema from '../../components/Schema';
+import Wrapper from '../../components/Wrapper';
 
 interface statusDiff {
   isDiff: boolean;
@@ -264,18 +264,18 @@ const DiffChecker: React.FC = () => {
           </>
         )}
 
-        <ContainerInfo
-          data={[
-            {
-              title: 'Diff checker',
-              text: 'In computing, the utility diff is a data comparison tool that computes and displays the differences between the contents of files. Unlike edit distance notions used for other purposes, diff is line-oriented rather than character-oriented, but it is like Levenshtein distance in that it tries to determine the smallest set of deletions and insertions to create one file from the other. The utility displays the changes in one of several standard formats, such that both humans or computers can parse the changes, and use them for patching.Typically, diff is used to show the changes between two versions of the same file. Modern implementations also support binary files.[1] The output is called a "diff", or a patch, since the output can be applied with the Unix program patch. The output of similar file comparison utilities is also called a "diff"; like the use of the word "grep" for describing the act of searching, the word diff became a generic term for calculating data difference and the results thereof.[2] The POSIX standard specifies the behavior of the "diff" and "patch" utilities and their file formats.[3]',
-            },
-            {
-              title: 'Diff checker History Wikipedia',
-              text: 'diff was developed in the early 1970s on the Unix operating system, which was emerging from Bell Labs in Murray Hill, New Jersey. The first released version shipped with the 5th Edition of Unix in 1974[citation needed], and was written by Douglas McIlroy, and James Hunt. This research was published in a 1976 paper co-written with James W. Hunt, who developed an initial prototype of diff.[4] The algorithm this paper described became known as the Hunt–Szymanski algorithm.McIlroy work was preceded and influenced by Steve Johnson comparison program on GECOS and Mike Lesk proof program. Proof also originated on Unix and, like diff, produced line-by-line changes and even used angle-brackets (">" and "<") for presenting line insertions and deletions in the program output. The heuristics used in these early applications were, however, deemed unreliable. The potential usefulness of a diff tool provoked McIlroy into researching and designing a more robust tool that could be used in a variety of tasks, but perform well in the processing and size limitations of the PDP-11 hardware. His approach to the problem resulted from collaboration with individuals at Bell Labs including Alfred Aho, Elliot Pinson, Jeffrey Ullman, and Harold S. Stone.In the context of Unix, the use of the ed line editor provided diff with the natural ability to create machine-usable "edit scripts". These edit scripts, when saved to a file, can, along with the original file, be reconstituted by ed into the modified file in its entirety. This greatly reduced the secondary storage necessary to maintain multiple versions of a file. McIlroy considered writing a post-processor for diff where a variety of output formats could be designed and implemented, but he found it more frugal and simpler to have diff be responsible for generating the syntax and reverse-order input accepted by the ed command.Late in 1984 Larry Wall created a separate utility, patch, releasing its source code on the mod.sources and net.sources newsgroups.[5][6][7] This program generalized and extended the ability to modify files with output from diff.Modes in Emacs also allow for converting the format of patches and even editing patches interactively.In diff early years, common uses included comparing changes in the source of software code and markup for technical documents, verifying program debugging output, comparing filesystem listings and analyzing computer assembly code. The output targeted for ed was motivated to provide compression for a sequence of modifications made to a file. The Source Code Control System (SCCS) and its ability to archive revisions emerged in the late 1970s as a consequence of storing edit scripts from diff.',
-            },
-          ]}
-        />
+        <ContainerInfo>
+          <SubtitleArticle>Why compare two files?</SubtitleArticle>
+          <Text>
+            A diff tool is used to compare text differences between two text
+            files. If you are a developer, you probably need to use this tool.
+          </Text>
+
+          <Text>
+            The content you want to compare may be in different formats and you
+            can see the highlighted difference in results in seconds.
+          </Text>
+        </ContainerInfo>
         <RelatedLinks
           data={[
             {
@@ -295,8 +295,6 @@ const DiffChecker: React.FC = () => {
 };
 
 export default DiffChecker;
-
-const Wrapper = styled.div``;
 
 const Container = styled.div`
   display: flex;
@@ -375,4 +373,17 @@ const SubtitleContainer = styled.div`
 const ContainerStatusDiff = styled.div`
   display: flex;
   margin-left: 5px;
+`;
+
+const ContainerInfo = styled.article`
+  margin: 35px 0;
+`;
+
+const Text = styled.p`
+  margin: 0 0 20px;
+  line-height: 25px;
+`;
+
+const SubtitleArticle = styled.h3`
+  margin: 35px 0;
 `;

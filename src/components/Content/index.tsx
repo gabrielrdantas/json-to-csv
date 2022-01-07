@@ -1,14 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Content: React.FC = ({ children }) => {
-  return <ContentUi>{children}</ContentUi>;
+const Wrapper: React.FC = ({ children }) => {
+  return <WrapperUi>{children}</WrapperUi>;
 };
 
-const ContentUi = styled.section`
+const WrapperUi = styled.section`
   max-width: 1250px;
   width: 100%;
   margin: 0 auto;
+  flex: 1;
 `;
 
-export default Content;
+export default Wrapper;

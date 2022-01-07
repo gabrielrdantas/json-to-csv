@@ -3,13 +3,12 @@ import styled from 'styled-components';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import MenuOptions from '../../components/MenuOptions';
-import ContainerInfo from '../../components/Info';
-
-import Content from '../../components/Content';
+import Wrapper from '../../components/Wrapper';
 import Seo from '../../components/Seo';
 import Schema from '../../components/Schema';
 
 import RelatedLinks from '../../components/RelatedLinks';
+import Content from '../../components/Content';
 
 const JsonFormatter: React.FC = () => {
   const [jsonValue, setJsonValue] = useState('');
@@ -92,18 +91,51 @@ const JsonFormatter: React.FC = () => {
           <ResultFormatted contentEditable="true">{jsonValue}</ResultFormatted>
         </Container>
 
-        <ContainerInfo
-          data={[
-            {
-              title: 'JSON Introduction',
-              text: 'JSON grew out of a need for stateless, real-time server-to-browser communication protocol without using browser plugins such as Flash or        Java applets, the dominant methods used in the early 2000s.[10] A        precursor to the JSON libraries was used in a childrens digital asset        trading game project named Cartoon Orbit at Communities.com (at which        State Software`s co-founders had all worked previously) for Cartoon        Network, which used a browser side plug-in with a proprietary messaging        format to manipulate Dynamic HTML elements (this system is also owned by        3DO). Upon discovery of early Ajax capabilities, digiGroups, Noosh, and        others used frames to pass information into the user browsers`` visual        field without refreshing a Web application`s visual context, realizing        real-time rich Web applications using only the standard HTTP, HTML and        JavaScript capabilities of Netscape 4.0.5+ and IE 5+.[citation needed]        Crockford first specified and popularized the JSON format.[11] The State        Software co-founders agreed to build a system that used standard browser        capabilities and provided an abstraction layer for Web developers to        create stateful Web applications that had a persistent duplex connection        to a Web server by holding two Hypertext Transfer Protocol (HTTP)        connections open and recycling them before standard browser time-outs if        no further data were exchanged. The co-founders had a round-table        discussion and voted whether to call the data format JSML (JavaScript        Markup Language) or JSON (JavaScript Object Notation), as well as under        what license type to make it available. Chip Morningstar developed the        idea for the State Application Framework at State Software.[12][13] The        system was sold to Sun Microsystems, Amazon.com and EDS. The        JSON.org[14] website was launched in 2002. In December 2005, Yahoo!        began offering some of its Web services in JSON.[15] JSON was based on a        subset of the JavaScript scripting language (specifically, Standard        ECMA-262 3rd Edition—December 1999[16]) and is commonly used with        JavaScript, but it is a language-independent data format. Code for        parsing and generating JSON data is readily available in many        programming languages. JSON`s website lists JSON libraries by language.        In October 2013, Ecma International published the first edition of its        JSON standard ECMA-404.[7] That same year, RFC 7158 used ECMA-404 as a        reference. In 2014, RFC 7159 became the main reference for JSON`s        Internet uses, superseding RFC 4627 and RFC 7158 (but preserving        ECMA-262 and ECMA-404 as main references). In November 2017, ISO/IEC JTC        1/SC 22 published ISO/IEC 21778:2017[2] as an international standard. On        13 December 2017, the Internet Engineering Task Force obsoleted RFC 7159        when it published RFC 8259, which is the current version of the Internet        Standard STD 90.[17][18] Crockford added a clause to the JSON license        stating that The Software shall be used for Good, not Evil, in order to        open-source the JSON libraries while mocking corporate lawyers and those        who are overly pedantic. On the other hand, this clause led to license        compatibility problems of the JSON license with other open-source licenses, as open-source software and free software usually imply no restrictions on the purpose of use.[19]',
-            },
-            {
-              title: 'JSON History Wikipedia',
-              text: 'JSON grew out of a need for stateless, real-time server-to-browser communication protocol without using browser plugins such as Flash or        Java applets, the dominant methods used in the early 2000s.[10] A        precursor to the JSON libraries was used in a childrens digital asset        trading game project named Cartoon Orbit at Communities.com (at which        State Software`s co-founders had all worked previously) for Cartoon        Network, which used a browser side plug-in with a proprietary messaging        format to manipulate Dynamic HTML elements (this system is also owned by        3DO). Upon discovery of early Ajax capabilities, digiGroups, Noosh, and        others used frames to pass information into the user browsers`` visual        field without refreshing a Web application`s visual context, realizing        real-time rich Web applications using only the standard HTTP, HTML and        JavaScript capabilities of Netscape 4.0.5+ and IE 5+.[citation needed]        Crockford first specified and popularized the JSON format.[11] The State        Software co-founders agreed to build a system that used standard browser        capabilities and provided an abstraction layer for Web developers to        create stateful Web applications that had a persistent duplex connection        to a Web server by holding two Hypertext Transfer Protocol (HTTP)        connections open and recycling them before standard browser time-outs if        no further data were exchanged. The co-founders had a round-table        discussion and voted whether to call the data format JSML (JavaScript        Markup Language) or JSON (JavaScript Object Notation), as well as under        what license type to make it available. Chip Morningstar developed the        idea for the State Application Framework at State Software.[12][13] The        system was sold to Sun Microsystems, Amazon.com and EDS. The        JSON.org[14] website was launched in 2002. In December 2005, Yahoo!        began offering some of its Web services in JSON.[15] JSON was based on a        subset of the JavaScript scripting language (specifically, Standard        ECMA-262 3rd Edition—December 1999[16]) and is commonly used with        JavaScript, but it is a language-independent data format. Code for        parsing and generating JSON data is readily available in many        programming languages. JSON`s website lists JSON libraries by language.        In October 2013, Ecma International published the first edition of its        JSON standard ECMA-404.[7] That same year, RFC 7158 used ECMA-404 as a        reference. In 2014, RFC 7159 became the main reference for JSON`s        Internet uses, superseding RFC 4627 and RFC 7158 (but preserving        ECMA-262 and ECMA-404 as main references). In November 2017, ISO/IEC JTC        1/SC 22 published ISO/IEC 21778:2017[2] as an international standard. On        13 December 2017, the Internet Engineering Task Force obsoleted RFC 7159        when it published RFC 8259, which is the current version of the Internet        Standard STD 90.[17][18] Crockford added a clause to the JSON license        stating that The Software shall be used for Good, not Evil, in order to        open-source the JSON libraries while mocking corporate lawyers and those        who are overly pedantic. On the other hand, this clause led to license        compatibility problems of the JSON license with other open-source licenses, as open-source software and free software usually imply no restrictions on the purpose of use.[19]',
-            },
-          ]}
-        />
+        <ContainerInfo>
+          <SubtitleArticle>JSON Introduction</SubtitleArticle>
+          <Text>
+            The JSON (JavaScript Object Notation) format is an open format used
+            as an alternative to XML for downloading structured data between a
+            web server and a web application. The format has gained popularity
+            on web services such as email clients and shopping sites as it is
+            able to transmit a large amount of information between the client
+            and server using a smaller amount of characters.Value and attribute
+            pairs are separated by: and their values, when text, are enclosed in
+            quotation marks (numbers, for example, do not fit as quotation
+            marks).This pair-set logic can be repeated over and over, creating
+            multiple levels for the desired data structure.In practice, .json is
+            a format that contains a series of data structured in text and is
+            used to transfer information between systems.The data contained in a
+            JSON format file must be structured through a collection of name and
+            value pairs or be an ordered list of values.• value: represents the
+            corresponding content and can contain the following data types:
+            string, array, object, number, boolean or null.Data transfer between
+            applications is done through API - Application Programming Interface
+            - which, among other formats, uses a JSON notation to structure the
+            transferred information.JSON format is also used to perform AJAX
+            requests on websites, in which different interactions are made with
+            the database, such as MySql, to perform operations such as query,
+            inclusion and exclusion of records.Node.js, for example, uses a file
+            called package.json in its projects to store the dependencies used
+            in the application.Files in .json format make the specific features
+            that make this specification more attractive to use in applications
+            that consume data from other systems.The simplicity with which the
+            data is structured in JSON format allows it to be used in any kind
+            of programming language.File Formatting In addition to the .json
+            ending in all files that use this format, the stored data must
+            follow a specific notation, that is, it needs to be organized with
+            the following basic elements: • curly braces {} to delimit objects
+            and mandatory to start and terminate the content;It is also suitable
+            for use in mobile applications, where you need to request data from
+            a server and quickly use it in the application.JSON format is easy
+            to use, as its notification even allows a visual understanding of
+            the data organization.Faster execution and data transport Storing
+            data in text format, by the way, allows the .json file to take up
+            little memory space.This feature offers great performance, as it is
+            small, occupies few bytes, which offers more agility for downloading
+            and loading during processing.
+          </Text>
+        </ContainerInfo>
         <RelatedLinks
           data={[
             {
@@ -119,8 +151,6 @@ const JsonFormatter: React.FC = () => {
 };
 
 export default JsonFormatter;
-
-const Wrapper = styled.div``;
 
 const MenuOptionsContainer = styled.div`
   margin: 0;
@@ -162,4 +192,16 @@ const Subtitle = styled.h2`
   font-size: 26px;
   color: #fff;
   margin: 20px 0;
+`;
+
+const ContainerInfo = styled.article`
+  margin: 35px 0;
+`;
+
+const Text = styled.p`
+  line-height: 25px;
+`;
+
+const SubtitleArticle = styled.h3`
+  margin: 35px 0;
 `;

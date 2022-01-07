@@ -7,10 +7,10 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 
 import Content from '../../components/Content';
-import ContainerInfo from '../../components/Info';
 import RelatedLinks from '../../components/RelatedLinks';
 import Seo from '../../components/Seo';
 import Schema from '../../components/Schema';
+import Wrapper from '../../components/Wrapper';
 
 const ConvertJsonToPdf: React.FC = () => {
   const convertToPdf = (json: JSON) => {
@@ -86,18 +86,45 @@ const ConvertJsonToPdf: React.FC = () => {
         <Container>
           <InputData onChange={onChangeJson} />
         </Container>
-        <ContainerInfo
-          data={[
-            {
-              title: 'PDF Introduction',
-              text: 'Portable Document Format (PDF), standardized as ISO 32000, is a file format developed by Adobe in 1992 to present documents, including text formatting and images, in a manner independent of application software, hardware, and operating systems.[2][3] Based on the PostScript language, each PDF file encapsulates a complete description of a fixed-layout flat document, including the text, fonts, vector graphics, raster images and other information needed to display it. PDF has its roots in "The Camelot Project" initiated by Adobe co-founder John Warnock in 1991.[4]PDF was standardized as ISO 32000 in 2008.[5] The last edition as ISO 32000-2:2020 was published in December 2020.PDF files may contain a variety of content besides flat text and graphics including logical structuring elements, interactive elements such as annotations and form-fields, layers, rich media (including video content), three-dimensional objects using U3D or PRC, and various other data formats. The PDF specification also provides for encryption and digital signatures, file attachments, and metadata to enable workflows requiring these features.',
-            },
-            {
-              title: 'PDF History Wikipedia',
-              text: 'Adobe Systems made the PDF specification available free of charge in 1993. In the early years PDF was popular mainly in desktop publishing workflows, and competed with a variety of formats such as DjVu, Envoy, Common Ground Digital Paper, Farallon Replica and even Adobe own PostScript format.PDF was a proprietary format controlled by Adobe until it was released as an open standard on July 1, 2008, and published by the International Organization for Standardization as ISO 32000-1:2008,[6][7] at which time control of the specification passed to an ISO Committee of volunteer industry experts. In 2008, Adobe published a Public Patent License to ISO 32000-1 granting royalty-free rights for all patents owned by Adobe that are necessary to make, use, sell, and distribute PDF-compliant implementations.[8]PDF 1.7, the sixth edition of the PDF specification that became ISO 32000-1, includes some proprietary technologies defined only by Adobe, such as Adobe XML Forms Architecture (XFA) and JavaScript extension for Acrobat, which are referenced by ISO 32000-1 as normative and indispensable for the full implementation of the ISO 32000-1 specification.[9] These proprietary technologies are not standardized and their specification is published only on Adobe website.[10][11][12][13] Many of them are also not supported by popular third-party implementations of PDF.In December 2020, the second edition of PDF 2.0, ISO 32000-2:2020, was published, including clarifications, corrections and critical updates to normative references.[14] ISO 32000-2 does not include any proprietary technologies as normative references.[15]',
-            },
-          ]}
-        />
+
+        <ContainerInfo>
+          <SubtitleArticle>What is Adobe PDF?</SubtitleArticle>
+          <Text>
+            PDF (Portable Document Format) is a file formatdeveloped by Adobe
+            Systems to represent documents in a mannerregardless of the
+            application, hardware, and operating system used forcreate them.{' '}
+            <br />A PDF file can describe documents that contain text,graphics
+            and images in a device- and resolution-independent format.Its main
+            characteristic is to represent a documentwith integrity and fidelity
+            to its original format preserving thelayout, font, size and all
+            other settings of thearchive. <br />
+            Any file created in one of the MS Office applications, ieWord, Excel
+            and Power Point files, can be converted to PDF.Another possibility
+            to generate PDF is through the Office Suite ofBrOffice.org, free
+            software, is very similar to MS Office and allapplications have an
+            icon on the toolbar for converting fromfiles to PDF. <br />
+            How PDF technology worksPDF is a type of file that represents on
+            your computer screenelectronic document pages. It is possible to
+            convert various types to PDFfrom files, from text-based ones to
+            documents such as tables,graphics, images, etc. <br /> For this, the
+            PDF generates files using the principlesessentials of PostScript
+            technology, which is a kind of language usedto build pages for the
+            most diverse purposes.In general, you can transform any printable
+            filein PDF files.TRT Information Technology Secretariat of the 4th
+            RegionAdvantages of PDF Small file size: files have a
+            compressionacceptable (eg Word files with 1Mb after converting to
+            PDFthey reach 100 Kb in size, 10% of the original); <br /> PDF files
+            are compact and fully searchable and can beaccessed anytime with
+            Adobe Reader. Do not have font and/or file formatting problems; PDF
+            documents can have special access rights and can bedigitally signed,
+            that is, they prevent any type of change in theoriginal file; <br />
+            There are several free programs that generate PDF like: PDFMaker,
+            PDFReDirect, PDFCreator among others.Note: the most popular software
+            for generating and manipulating filesin PDF is Adobe Acrobat. <br />{' '}
+            Be careful not to confuse withAdobe Reader, which is simply a free
+            PDF reader.program allows only reading PDF files
+          </Text>
+        </ContainerInfo>
         <RelatedLinks
           data={[
             {
@@ -122,8 +149,6 @@ const ConvertJsonToPdf: React.FC = () => {
 
 export default ConvertJsonToPdf;
 
-const Wrapper = styled.div``;
-
 const Container = styled.div`
   background: #fff;
   display: flex;
@@ -145,4 +170,15 @@ const Subtitle = styled.h2`
   font-size: 26px;
   color: #fff;
   margin: 20px 0;
+`;
+const ContainerInfo = styled.article`
+  margin: 35px 0;
+`;
+
+const Text = styled.p`
+  line-height: 25px;
+`;
+
+const SubtitleArticle = styled.h3`
+  margin: 35px 0;
 `;
