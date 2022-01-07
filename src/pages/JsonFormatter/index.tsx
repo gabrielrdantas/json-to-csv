@@ -1,4 +1,10 @@
-import React, { useCallback, useState, ChangeEvent } from 'react';
+import React, {
+  useCallback,
+  useState,
+  ChangeEvent,
+  useRef,
+  useEffect,
+} from 'react';
 import styled from 'styled-components';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
@@ -12,6 +18,13 @@ import Content from '../../components/Content';
 
 const JsonFormatter: React.FC = () => {
   const [jsonValue, setJsonValue] = useState('');
+  const ref = useRef<HTMLTextAreaElement>(null);
+
+  useEffect(() => {
+    if (ref && ref.current) {
+      ref.current.focus();
+    }
+  }, []);
 
   const exportJSONFile = (json: string, fileTitle: string) => {
     const exportedFilenmae = `${fileTitle}.json` || 'file.json';
@@ -87,7 +100,7 @@ const JsonFormatter: React.FC = () => {
           />
         </MenuOptionsContainer>
         <Container>
-          <InputData onChange={onChangeJson} />
+          <InputData ref={ref} onChange={onChangeJson} />
           <ResultFormatted contentEditable="true">{jsonValue}</ResultFormatted>
         </Container>
 

@@ -1,4 +1,4 @@
-import React, { useCallback, ChangeEvent } from 'react';
+import React, { useCallback, ChangeEvent, useRef, useEffect } from 'react';
 
 import styled from 'styled-components';
 import pdfMake from 'pdfmake/build/pdfmake.js';
@@ -13,6 +13,13 @@ import Schema from '../../components/Schema';
 import Wrapper from '../../components/Wrapper';
 
 const ConvertJsonToPdf: React.FC = () => {
+  const ref = useRef<HTMLTextAreaElement>(null);
+
+  useEffect(() => {
+    if (ref && ref.current) {
+      ref.current.focus();
+    }
+  }, []);
   const convertToPdf = (json: JSON) => {
     let array = typeof json !== 'object' ? JSON.parse(json) : json;
     if (!Array.isArray(array)) array = [array];
@@ -84,7 +91,7 @@ const ConvertJsonToPdf: React.FC = () => {
       <Content>
         <Subtitle>Convert JSON to PDF online</Subtitle>
         <Container>
-          <InputData onChange={onChangeJson} />
+          <InputData ref={ref} onChange={onChangeJson} />
         </Container>
 
         <ContainerInfo>

@@ -1,4 +1,10 @@
-import React, { useCallback, useState, ChangeEvent, useEffect } from 'react';
+import React, {
+  useCallback,
+  useState,
+  ChangeEvent,
+  useEffect,
+  useRef,
+} from 'react';
 
 import styled from 'styled-components';
 import Header from '../../components/Header';
@@ -19,6 +25,14 @@ interface statusDiff {
 }
 
 const DiffChecker: React.FC = () => {
+  const ref = useRef<HTMLTextAreaElement>(null);
+
+  useEffect(() => {
+    if (ref && ref.current) {
+      ref.current.focus();
+    }
+  }, []);
+
   const [canShowResult, setCanShowResult] = useState(false);
   const [originalText, setOriginalText] = useState('');
   const [changedText, setChangedText] = useState('');
@@ -223,6 +237,7 @@ const DiffChecker: React.FC = () => {
             <ContainerText>
               <ContainerInput>
                 <InputDataTextarea
+                  ref={ref}
                   contentEditable="true"
                   onChange={onChangeValue1}
                 />

@@ -1,4 +1,10 @@
-import React, { useCallback, useState, ChangeEvent } from 'react';
+import React, {
+  useCallback,
+  useState,
+  ChangeEvent,
+  useRef,
+  useEffect,
+} from 'react';
 
 import styled from 'styled-components';
 import Header from '../../components/Header';
@@ -19,6 +25,14 @@ declare global {
 
 const ConvertJsonToCsv: React.FC = () => {
   const [jsonValue, setJsonValue] = useState('');
+
+  const ref = useRef<HTMLTextAreaElement>(null);
+
+  useEffect(() => {
+    if (ref && ref.current) {
+      ref.current.focus();
+    }
+  }, []);
 
   const exportCSVFile = (csv: string, fileTitle: string) => {
     const exportedFilenmae = `${fileTitle}.csv` || 'export.csv';
@@ -102,7 +116,7 @@ const ConvertJsonToCsv: React.FC = () => {
       <Content>
         <Subtitle>Input JSON</Subtitle>
         <Container>
-          <InputData onChange={onChangeJson} />
+          <InputData ref={ref} onChange={onChangeJson} />
         </Container>
 
         <Subtitle>Output CSV</Subtitle>

@@ -27,7 +27,7 @@ const RelatedLinks: React.FC<contentProp> = ({ data }) => {
 };
 
 const Container = styled.div`
-  margin: 0 20px 20px;
+  margin: 0 0 20px;
 `;
 const Ul = styled.ul`
   display: flex;
