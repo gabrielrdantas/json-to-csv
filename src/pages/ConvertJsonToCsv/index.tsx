@@ -4,6 +4,7 @@ import React, {
   ChangeEvent,
   useRef,
   useEffect,
+  MouseEvent,
 } from 'react';
 
 import styled from 'styled-components';
@@ -23,17 +24,15 @@ declare global {
   }
 }
 
+let arrayFiltered: any[] = [];
+
 const ConvertJsonToCsv: React.FC = () => {
   const [jsonValue, setJsonValue] = useState('');
+  const [csvValue, setCsvValue] = useState('');
+  const [filterDisabled, setFilterDisabled] = useState(true);
 
   const ref = useRef<HTMLTextAreaElement>(null);
-
-  useEffect(() => {
-    if (ref && ref.current) {
-      ref.current.focus();
-    }
-  }, []);
-
+  const inputRef = useRef<HTMLInputElement>(null);
   const exportCSVFile = (csv: string, fileTitle: string) => {
     const exportedFilenmae = `${fileTitle}.csv` || 'export.csv';
     const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
@@ -53,7 +52,7 @@ const ConvertJsonToCsv: React.FC = () => {
     }
   };
 
-  const convertToCSV = (items: string) => {
+  const convertToCSV = (items: any) => {
     let array = typeof items !== 'object' ? JSON.parse(items) : items;
     if (!Array.isArray(array)) array = [array];
 
@@ -74,11 +73,65 @@ const ConvertJsonToCsv: React.FC = () => {
 
   const onChangeJson = useCallback((e: ChangeEvent<HTMLTextAreaElement>) => {
     if (e.target.value) {
-      setJsonValue(convertToCSV(JSON.parse(e.target.value)));
+      setCsvValue(convertToCSV(JSON.parse(e.target.value)));
+      setJsonValue(JSON.parse(e.target.value));
       return;
     }
     setJsonValue('');
+    setCsvValue('');
   }, []);
+
+  const filterField = useCallback((json: any, term: any): any => {
+    const termArray = term.trim().split(/\s*,\s*/);
+    const obj = {} as any;
+    Object.keys(json).map(key => {
+      const jsonKey = json[key];
+      if (Array.isArray(jsonKey)) {
+        Object.keys(jsonKey).map(childrenKey =>
+          filterField(jsonKey[childrenKey as any], term),
+        );
+      } else if (termArray.includes(key)) {
+        obj[key] = jsonKey;
+      }
+      return null;
+    });
+    arrayFiltered.push(obj);
+  }, []);
+
+  const onClickFilter = useCallback(
+    (e: MouseEvent<HTMLButtonElement>) => {
+      e.preventDefault();
+      arrayFiltered = [];
+      let value = '';
+      if (inputRef && inputRef.current) {
+        value = inputRef.current.value;
+      }
+      if (value) {
+        filterField(jsonValue, value);
+        setCsvValue(convertToCSV(arrayFiltered));
+      } else {
+        setCsvValue(convertToCSV(jsonValue));
+      }
+    },
+    [jsonValue, filterField],
+  );
+
+  useEffect(() => {
+    if (ref && ref.current) {
+      ref.current.focus();
+    }
+  }, []);
+
+  useEffect(() => {
+    if (jsonValue) {
+      setFilterDisabled(false);
+      return;
+    }
+    if (inputRef && inputRef.current) {
+      inputRef.current.value = '';
+      setFilterDisabled(true);
+    }
+  }, [jsonValue]);
 
   return (
     <Wrapper>
@@ -119,19 +172,39 @@ const ConvertJsonToCsv: React.FC = () => {
           <InputData ref={ref} onChange={onChangeJson} />
         </Container>
 
-        <Subtitle>Output CSV</Subtitle>
+        <ContainerFilter>
+          <Subtitle>Output CSV</Subtitle>
+          <FormFilter>
+            <Label disabledInput={filterDisabled} htmlFor="inputField">
+              Build csv with some fields:
+            </Label>
+            <Input
+              ref={inputRef}
+              disabledInput={filterDisabled}
+              id="inputField"
+              type="text"
+              placeholder="Insert the fields here, separating with a comma"
+            />
+            <ButtonFilter
+              disabledInput={filterDisabled}
+              onClick={onClickFilter}
+            >
+              Filter
+            </ButtonFilter>
+          </FormFilter>
+        </ContainerFilter>
         <MenuOptions
           onClickDownload={() => {
-            if (jsonValue) {
-              exportCSVFile(jsonValue, 'jsonToCsv');
+            if (csvValue) {
+              exportCSVFile(csvValue, 'jsonToCsv');
             }
           }}
           onClickCopy={() => {
-            navigator.clipboard.writeText(jsonValue);
+            navigator.clipboard.writeText(csvValue);
           }}
         />
         <Container>
-          <ResultFormatted contentEditable="true">{jsonValue}</ResultFormatted>
+          <ResultFormatted contentEditable="true">{csvValue}</ResultFormatted>
         </Container>
         <ContainerInfo>
           <SubtitleArticle>Comma-separated values</SubtitleArticle>
@@ -230,4 +303,42 @@ const Text = styled.p`
 
 const SubtitleArticle = styled.h3`
   margin: 35px 0;
+`;
+
+const Input = styled.input<{ disabledInput: boolean }>`
+  border: none;
+  padding: 10px;
+  font-size: 12px;
+  width: 350px;
+  border-radius: 10px;
+  ${({ disabledInput }) => disabledInput && `opacity: 0.5;`}
+  ${({ disabledInput }) => disabledInput && `pointer-events: none;`}
+`;
+
+const ContainerFilter = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: self-end;
+  margin: 20px 0 0;
+`;
+
+const Label = styled.label<{ disabledInput: boolean }>`
+  margin: 0 15px 0 0;
+  ${({ disabledInput }) => disabledInput && `opacity: 0.5;`}
+  ${({ disabledInput }) => disabledInput && `pointer-events: none;`}
+`;
+const FormFilter = styled.form`
+  margin: 0 1px 10px 0;
+`;
+
+const ButtonFilter = styled.button<{ disabledInput: boolean }>`
+  background: #fff;
+  border: none;
+  padding: 10px;
+  font-size: 12px;
+  width: 100px;
+  border-radius: 10px;
+  margin: 0 0 0 15px;
+  ${({ disabledInput }) => disabledInput && `opacity: 0.5;`}
+  ${({ disabledInput }) => disabledInput && `pointer-events: none;`}
 `;
