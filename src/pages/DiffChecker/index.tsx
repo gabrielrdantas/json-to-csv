@@ -197,7 +197,7 @@ const DiffChecker: React.FC = () => {
   return (
     <Wrapper>
       <Seo
-        title="Diff json online"
+        title="Convert and diff checker json online"
         description="Checker diff json online, this page is simple, fast and practical!"
         ogDescription="Checker diff online, this page is simple, fast and practical! Come meet us!"
         ogTitle="Checker diff simply!"
@@ -211,7 +211,7 @@ const DiffChecker: React.FC = () => {
             {
               '@id': `https://convertjsononline.com#webpage`,
               '@type': 'WebPage',
-              name: 'Checker diff online',
+              name: 'Convert and diff checker json online',
               image: `https://convertjsononline.com#primaryimage`,
               url: 'https://convertjsononline.com/json-diff-checker',
               description:
@@ -226,7 +226,7 @@ const DiffChecker: React.FC = () => {
           ],
         }}
       />
-      <Header title="Diff checker json online" itemSelected={3} />
+      <Header title="Convert and diff checker json online" itemSelected={3} />
       <Content>
         <Container>
           <AreaDiv>

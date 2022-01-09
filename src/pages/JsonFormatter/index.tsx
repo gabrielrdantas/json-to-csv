@@ -53,10 +53,10 @@ const JsonFormatter: React.FC = () => {
   return (
     <Wrapper>
       <Seo
-        title="Formatter online JSON"
-        description="Formatter json online, this page is simple, fast and practical!"
-        ogDescription="Break line and formatter json online, this page is simple, fast and practical! Come meet us!"
-        ogTitle="formatter json online simply!"
+        title="Convert and formatter json to csv, pdf and diff checker"
+        description="Convert to json, formatter json, convert json to csv, pdf and checker your files"
+        ogDescription="Convert to json, formatter json, convert json to csv, pdf and checker your files"
+        ogTitle="Convert and formatter json to csv, pdf and diff checker"
         canonical="https://convertjsononline.com"
       />
       <Schema
@@ -67,7 +67,7 @@ const JsonFormatter: React.FC = () => {
             {
               '@id': `https://convertjsononline.com#webpage`,
               '@type': 'WebPage',
-              name: 'Formatter online JSON',
+              name: 'Formatter and convert json online',
               image: `https://convertjsononline.com#primaryimage`,
               url: 'https://convertjsononline.com',
               description:
@@ -82,9 +82,9 @@ const JsonFormatter: React.FC = () => {
           ],
         }}
       />
-      <Header title="Formatter and converting json online" itemSelected={0} />
+      <Header title="Convert and formatter json" itemSelected={0} />
       <Content>
-        <Subtitle>Formatter and converting json online</Subtitle>
+        <Subtitle>Convert JSON online</Subtitle>
         <MenuOptionsContainer>
           <MenuOptions
             onClickDownload={() => {
