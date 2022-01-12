@@ -12,10 +12,14 @@ const MenuOptions: React.FC<MenuOptionsProps> = ({
 }) => {
   return (
     <MenuUI>
-      <MenuItem onClick={onClickCopy} title="Copy Json">
+      <MenuItem id="menu-item-copy" onClick={onClickCopy} title="Copy Json">
         <span>Copy</span> <CgCopy size={20} />
       </MenuItem>
-      <MenuItem title="Download Json" onClick={onClickDownload}>
+      <MenuItem
+        id="menu-item-download"
+        title="Download Json"
+        onClick={onClickDownload}
+      >
         <span>Download</span> <CgSoftwareDownload size={20} />
       </MenuItem>
     </MenuUI>

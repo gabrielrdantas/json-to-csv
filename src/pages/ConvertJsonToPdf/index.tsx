@@ -91,7 +91,7 @@ const ConvertJsonToPdf: React.FC = () => {
       <Content>
         <Subtitle>Convert JSON to PDF online</Subtitle>
         <Container>
-          <InputData ref={ref} onChange={onChangeJson} />
+          <InputData id="data-pdf-json" ref={ref} onChange={onChangeJson} />
         </Container>
 
         <ContainerInfo>

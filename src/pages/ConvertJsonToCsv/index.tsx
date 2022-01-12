@@ -169,25 +169,26 @@ const ConvertJsonToCsv: React.FC = () => {
       <Content>
         <Subtitle>Input JSON</Subtitle>
         <Container>
-          <InputData ref={ref} onChange={onChangeJson} />
+          <InputData id="input-data-csv" ref={ref} onChange={onChangeJson} />
         </Container>
 
         <ContainerFilter>
           <Subtitle>Output CSV</Subtitle>
           <FormFilter>
-            <Label disabledInput={filterDisabled} htmlFor="inputField">
+            <Label disabledInput={filterDisabled} htmlFor="input-csv-json">
               Build csv with some fields:
             </Label>
             <Input
               ref={inputRef}
               disabledInput={filterDisabled}
-              id="inputField"
+              id="input-csv-json"
               type="text"
               placeholder="Insert the fields here, separating with a comma"
             />
             <ButtonFilter
               disabledInput={filterDisabled}
               onClick={onClickFilter}
+              id="button-filter-csv"
             >
               Filter
             </ButtonFilter>
@@ -204,7 +205,9 @@ const ConvertJsonToCsv: React.FC = () => {
           }}
         />
         <Container>
-          <ResultFormatted contentEditable="true">{csvValue}</ResultFormatted>
+          <ResultFormatted id="result-filter-csv" contentEditable="true">
+            {csvValue}
+          </ResultFormatted>
         </Container>
         <ContainerInfo>
           <SubtitleArticle>Comma-separated values</SubtitleArticle>

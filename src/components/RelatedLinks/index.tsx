@@ -17,7 +17,9 @@ const RelatedLinks: React.FC<contentProp> = ({ data }) => {
         {data.map(item => {
           return (
             <List>
-              <Link href={item.link}>{item.name}</Link>
+              <Link className="menu-related-link" href={item.link}>
+                {item.name}
+              </Link>
             </List>
           );
         })}

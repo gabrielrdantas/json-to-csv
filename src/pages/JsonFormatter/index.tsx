@@ -100,8 +100,14 @@ const JsonFormatter: React.FC = () => {
           />
         </MenuOptionsContainer>
         <Container>
-          <InputData ref={ref} onChange={onChangeJson} />
-          <ResultFormatted contentEditable="true">{jsonValue}</ResultFormatted>
+          <InputData
+            id="data-json-formatter"
+            ref={ref}
+            onChange={onChangeJson}
+          />
+          <ResultFormatted id="result-json-formatter" contentEditable="true">
+            {jsonValue}
+          </ResultFormatted>
         </Container>
 
         <ContainerInfo>

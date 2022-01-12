@@ -237,6 +237,7 @@ const DiffChecker: React.FC = () => {
             <ContainerText>
               <ContainerInput>
                 <InputDataTextarea
+                  id="original-json-diff"
                   ref={ref}
                   contentEditable="true"
                   onChange={onChangeValue1}
@@ -245,6 +246,7 @@ const DiffChecker: React.FC = () => {
 
               <ContainerInput>
                 <InputDataTextarea
+                  id="other-json-diff"
                   contentEditable="true"
                   onChange={onChangeValue2}
                 />
@@ -263,11 +265,15 @@ const DiffChecker: React.FC = () => {
                 </SubtitleContainer>
                 <ContainerText>
                   <ContainerInput>
-                    <InputData>{resultOriginalText}</InputData>
+                    <InputData id="result-original-json-diff">
+                      {resultOriginalText}
+                    </InputData>
                   </ContainerInput>
 
                   <ContainerInput>
-                    <InputData>{resultChangedText}</InputData>
+                    <InputData id="result-other-json-diff">
+                      {resultChangedText}
+                    </InputData>
                   </ContainerInput>
                 </ContainerText>
               </AreaDiv>

@@ -10,30 +10,41 @@ const Menu: React.FC<Props> = ({ itemSelected }) => {
   return (
     <MenuUI>
       <MenuItem>
-        <MenuLink to="/" itemSelected={itemSelected === 0}>
+        <MenuLink
+          id="menu-item-json-formatter"
+          to="/"
+          itemSelected={itemSelected === 0}
+        >
           JSON Formatter
         </MenuLink>
       </MenuItem>
       <MenuItem>
-        <MenuLink to="/json-to-csv" itemSelected={itemSelected === 1}>
+        <MenuLink
+          id="menu-item-json-csv"
+          to="/json-to-csv"
+          itemSelected={itemSelected === 1}
+        >
           JSON to CSV
         </MenuLink>
       </MenuItem>
       <MenuItem>
-        <MenuLink to="/json-to-pdf" itemSelected={itemSelected === 2}>
+        <MenuLink
+          id="menu-item-json-pdf"
+          to="/json-to-pdf"
+          itemSelected={itemSelected === 2}
+        >
           JSON to PDF
         </MenuLink>
       </MenuItem>
       <MenuItem>
-        <MenuLink to="/json-diff-checker" itemSelected={itemSelected === 3}>
+        <MenuLink
+          id="menu-item-json-diff"
+          to="/json-diff-checker"
+          itemSelected={itemSelected === 3}
+        >
           JSON Diff Checker
         </MenuLink>
       </MenuItem>
-      {/* <MenuItem>
-        <MenuLink to="/" itemSelected={itemSelected === 2}>
-          JSON to CSV With advanced filters
-        </MenuLink>
-      </MenuItem> */}
     </MenuUI>
   );
 };
