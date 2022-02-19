@@ -140,7 +140,7 @@ const ConvertJsonToCsv: React.FC = () => {
         description="Convert JSON to CSV online, this page is simple, fast and practical!"
         ogDescription="Convert JSON to CSV online, this page is simple, fast and practical! Come meet us!"
         ogTitle="Convering JSON to CSV simply!"
-        canonical="https://convertjsononline.com"
+        canonical="https://convertjsononline.com/json-to-csv"
       />
       <Schema
         data={{
