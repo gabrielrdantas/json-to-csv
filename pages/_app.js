@@ -2,7 +2,6 @@ import Head from 'next/head';
 import Script from 'next/script';
 
 import GlobalStyle from '../src/styles/global';
-import { ServerStyleSheet } from 'styled-components';
 
 function MyApp({ Component, pageProps }) {
     return (
