@@ -205,7 +205,11 @@ const ConvertJsonToCsv: React.FC = () => {
           }}
         />
         <Container>
-          <ResultFormatted id="result-filter-csv" contentEditable="true">
+          <ResultFormatted
+            id="result-filter-csv"
+            contentEditable="true"
+            suppressContentEditableWarning
+          >
             {csvValue}
           </ResultFormatted>
         </Container>

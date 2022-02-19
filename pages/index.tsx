@@ -16,6 +16,8 @@ import Schema from '../src/components/Schema';
 import RelatedLinks from '../src/components/RelatedLinks';
 import Content from '../src/components/Content';
 
+import GlobalStyle from '../src/styles/global';
+
 const JsonFormatter: React.FC = () => {
   const [jsonValue, setJsonValue] = useState('');
   const ref = useRef<HTMLTextAreaElement>(null);
@@ -105,7 +107,11 @@ const JsonFormatter: React.FC = () => {
             ref={ref}
             onChange={onChangeJson}
           />
-          <ResultFormatted id="result-json-formatter" contentEditable="true">
+          <ResultFormatted
+            id="result-json-formatter"
+            contentEditable="true"
+            suppressContentEditableWarning
+          >
             {jsonValue}
           </ResultFormatted>
         </Container>
@@ -165,6 +171,8 @@ const JsonFormatter: React.FC = () => {
         />
       </Content>
       <Footer />
+
+      <GlobalStyle />
     </Wrapper>
   );
 };
