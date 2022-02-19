@@ -43,6 +43,14 @@ function MyApp({ Component, pageProps }) {
                 </script>
             </Head>
             <Script src="https://polyfill.io/v3/polyfill.min.js" strategy="beforeInteractive" />
+            <noscript>
+              <iframe
+              src="https://www.googletagmanager.com/ns.html?id=GTM-WL2PM76"
+              height="0"
+              width="0"
+              style="display: none; visibility: hidden" />
+            </noscript>
+
             <GlobalStyle />
             <Component {...pageProps} />
         </>
