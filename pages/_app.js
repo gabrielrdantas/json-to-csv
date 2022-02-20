@@ -40,6 +40,7 @@ function MyApp({ Component, pageProps }) {
                         `
                     }}>
                 </script>
+                <script data-ad-client="ca-pub-6901180360285673" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
             </Head>
             <Script src="https://polyfill.io/v3/polyfill.min.js" strategy="beforeInteractive" />
             <noscript>
