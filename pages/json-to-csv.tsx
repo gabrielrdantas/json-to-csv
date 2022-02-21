@@ -176,14 +176,14 @@ const ConvertJsonToCsv: React.FC = () => {
           <Subtitle>Output CSV</Subtitle>
           <FormFilter>
             <Label disabledInput={filterDisabled} htmlFor="input-csv-json">
-              Build csv with some fields:
+              Filter field:
             </Label>
             <Input
               ref={inputRef}
               disabledInput={filterDisabled}
               id="input-csv-json"
               type="text"
-              placeholder="Insert the fields here, separating with a comma"
+              placeholder="Insert fields separating with a comma"
             />
             <ButtonFilter
               disabledInput={filterDisabled}

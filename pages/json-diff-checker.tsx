@@ -339,7 +339,7 @@ const InputData = styled.pre`
   border-right: 1px solid #ccc;
   font-family: 'Roboto Slab', serif;
   color: #666;
-  font-size: 20px;
+  font-size: 16px;
   line-height: 20px;
   width: 100%;
   flex: 1;
@@ -353,7 +353,7 @@ const InputDataTextarea = styled.textarea`
   border-right: 1px solid #ccc;
   font-family: 'Roboto Slab', serif;
   color: #666;
-  font-size: 20px;
+  font-size: 16px;
   line-height: 20px;
   width: 100%;
   flex: 1;
@@ -369,10 +369,12 @@ const Subtitle = styled.h2`
 
 const OriginalDiv = styled.div`
   background: #c8f0da;
+  white-space: break-spaces;
 `;
 
 const ChangedDiv = styled.div`
   background: #ffcbbd;
+  white-space: break-spaces;
 `;
 
 const ContainerText = styled.div`
