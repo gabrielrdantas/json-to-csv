@@ -22,21 +22,28 @@ const ConvertJsonToPdf: React.FC = () => {
   }, []);
   const convertToPdf = (json: JSON) => {
     let array = typeof json !== 'object' ? JSON.parse(json) : json;
-    if (!Array.isArray(array)) array = [array];
+
+    if (!Array.isArray(array)) {
+      array = [array];
+    }
+
     pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
     const title = Object.keys(array[0])[0];
     const document: any = {
       content: [{ text: title, fontSize: 26, bold: true }],
     };
-    array[0][title].forEach((item: any) => {
+
+    array.forEach((item: any) => {
       const line: any[] = [{ text: '', margin: [0, 20, 0, 0] }];
+
       Object.keys(item).map(key => {
         const textPdf = item[key];
         if (Array.isArray(textPdf)) {
           line.push(`${key} : invalid value`);
           return null;
         }
+
         line.push(`${key} : ${textPdf}`);
         return null;
       });
@@ -159,7 +166,7 @@ export default ConvertJsonToPdf;
 const Container = styled.div`
   background: #fff;
   display: flex;
-  height: 20vh;
+  height: 60vh;
 `;
 
 const InputData = styled.textarea`

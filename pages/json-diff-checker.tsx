@@ -330,7 +330,7 @@ const ContainerResult = styled.div`
 
 const ContainerInput = styled.div`
   background: #fff;
-  min-height: 300px;
+  min-height: 600px;
   width: 50%;
 `;
 
@@ -344,7 +344,7 @@ const InputData = styled.pre`
   width: 100%;
   flex: 1;
   padding: 20px;
-  min-height: 300px;
+  min-height: 600px;
   overflow: auto;
 `;
 
@@ -358,7 +358,7 @@ const InputDataTextarea = styled.textarea`
   width: 100%;
   flex: 1;
   padding: 20px;
-  min-height: 300px;
+  min-height: 600px;
 `;
 const Subtitle = styled.h2`
   font-size: 26px;
@@ -382,7 +382,7 @@ const ContainerText = styled.div`
   width: 100%;
   overflow: auto;
   background: #fff;
-  height: 300px;
+  height: 600px;
 `;
 
 const AreaDiv = styled.div`

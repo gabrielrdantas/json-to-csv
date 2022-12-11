@@ -267,7 +267,7 @@ export default ConvertJsonToCsv;
 const Container = styled.div`
   background: #fff;
   display: flex;
-  height: 20vh;
+  height: 30vh;
 `;
 
 const InputData = styled.textarea`

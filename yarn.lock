@@ -2114,10 +2114,10 @@
   dependencies:
     "@types/node" "*"
 
-"@types/pdfmake@^0.1.19":
-  version "0.1.20"
-  resolved "https://registry.yarnpkg.com/@types/pdfmake/-/pdfmake-0.1.20.tgz#daf746dff3e9dda939c2a90029472bcc46ff14d3"
-  integrity sha512-ojIxeOHHy0T3j/RTpv6mscM7heKxJb+f7kP7dMPkRPbWXEEunhBHw74Y6A2gbG3zFpmVIE1eYPiqeMlUC4L+tg==
+"@types/pdfmake@0.1.19":
+  version "0.1.19"
+  resolved "https://registry.yarnpkg.com/@types/pdfmake/-/pdfmake-0.1.19.tgz#d0b9fbf87777ccb56701995d62edeb9b37d52579"
+  integrity sha512-wcz8QeFUP8VWPwLjWDKX9pp3HcamdQd94vSdK2jHqz/U/srCNQAmhcLSAybuUqwemDKncMnhLTjQq5gjrfc7Yg==
   dependencies:
     "@types/node" "*"
     "@types/pdfkit" "*"
@@ -7813,7 +7813,7 @@ pbkdf2@^3.0.3:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
-pdfmake@^0.2.4:
+pdfmake@0.2.4:
   version "0.2.4"
   resolved "https://registry.yarnpkg.com/pdfmake/-/pdfmake-0.2.4.tgz#7d58d64b59f8e9b9ed0b2494b17a9d94c575825b"
   integrity sha512-EM39waHUe/Dg1W9C3XqYbpx6tfhYyU14JHZlI1HaW0AUEY32GbkRBjDLGWo9f7z/k3ea6k1p9yyDrflnvtZS1A==
