@@ -195,7 +195,7 @@ const InputData = styled.textarea`
   border-right: 1px solid #ccc;
   font-family: 'Roboto Slab', serif;
   color: #666;
-  font-size: 20px;
+  font-size: 16px;
   line-height: 20px;
   width: 50%;
   flex: 1;
@@ -208,7 +208,7 @@ const ResultFormatted = styled.pre`
   overflow: auto;
   font-family: 'Roboto Slab', serif;
   color: #666;
-  font-size: 20px;
+  font-size: 16px;
   line-height: 20px;
   padding: 20px;
   width: 50%;
