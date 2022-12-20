@@ -36,6 +36,8 @@ function MyApp({ Component, pageProps }) {
                           j.async = true;
                           j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
                           f.parentNode.insertBefore(j, f);
+                          gtag('config', 'AW-880435751')
+                          gtag('event', 'conversion', {'send_to': 'AW-880435751/A8HPCKfs5IUYEKfE6aMD'});
                         })(window, document, 'script', 'dataLayer', 'GTM-WL2PM76');
                         `
                     }}>
