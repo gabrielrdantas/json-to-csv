@@ -36,7 +36,6 @@ function MyApp({ Component, pageProps }) {
                           j.async = true;
                           j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
                           f.parentNode.insertBefore(j, f);
-                          gtag('config', 'AW-880435751')
                         })(window, document, 'script', 'dataLayer', 'GTM-WL2PM76');
                         `
                     }}>

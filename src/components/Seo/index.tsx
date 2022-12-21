@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 
 interface PropsType {
@@ -8,6 +8,13 @@ interface PropsType {
   canonical: string;
   ogTitle: string;
 }
+
+declare global {
+  interface Window {
+    gtag: any;
+  }
+}
+
 const Seo: React.FC<PropsType> = ({
   title,
   description,
@@ -15,6 +22,12 @@ const Seo: React.FC<PropsType> = ({
   ogTitle,
   canonical,
 }) => {
+  useEffect(() => {
+    window.gtag('config', 'AW-880435751');
+    window.gtag('event', 'conversion', {
+      send_to: 'AW-880435751/A8HPCKfs5IUYEKfE6aMD',
+    });
+  }, []);
   return (
     <Helmet>
       <meta charSet="utf-8" />
@@ -32,9 +45,6 @@ const Seo: React.FC<PropsType> = ({
       <meta property="og:type" content="website" />
       <meta property="og:url" content="" />
       <meta property="og:description" content={ogDescription} />
-      <script>
-        gtag('event', 'conversion', {'send_to': 'AW-880435751/A8HPCKfs5IUYEKfE6aMD'});
-      </script>
     </Helmet>
   );
 };
