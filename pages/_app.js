@@ -36,13 +36,12 @@ function MyApp({ Component, pageProps }) {
                           j.async = true;
                           j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
                           f.parentNode.insertBefore(j, f);
-                          function gtag(){l.push(arguments);}
-                          gtag('js', new Date());
+                          gtag('config', 'AW-880435751')
+                          gtag('event', 'conversion', {'send_to': 'AW-880435751/A8HPCKfs5IUYEKfE6aMD'});
                         })(window, document, 'script', 'dataLayer', 'GTM-WL2PM76');
                         `
                     }}>
                 </script>
-         
                 <script data-ad-client="ca-pub-6901180360285673" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
             </Head>
             <Script src="https://polyfill.io/v3/polyfill.min.js" strategy="beforeInteractive" />
