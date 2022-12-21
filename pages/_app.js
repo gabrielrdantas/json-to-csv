@@ -42,16 +42,7 @@ function MyApp({ Component, pageProps }) {
                         `
                     }}>
                 </script>
-                <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-880435751"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-880435751');
-</script>
-
+         
                 <script data-ad-client="ca-pub-6901180360285673" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
             </Head>
             <Script src="https://polyfill.io/v3/polyfill.min.js" strategy="beforeInteractive" />
