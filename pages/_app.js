@@ -24,7 +24,7 @@ function MyApp({ Component, pageProps }) {
                 />
 
                 <title>Convert and formatter json to csv, pdf and diff checker</title>
-
+                
                 <script dangerouslySetInnerHTML={{
                         __html: `
                         (function (w, d, s, l, i) {
@@ -36,6 +36,9 @@ function MyApp({ Component, pageProps }) {
                           j.async = true;
                           j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
                           f.parentNode.insertBefore(j, f);
+                          window.dataLayer = window.dataLayer || [];
+                          function gtag(){dataLayer.push(arguments);}
+                          gtag('js', new Date());
                           gtag('config', 'AW-880435751')
                           gtag('event', 'conversion', {'send_to': 'AW-880435751/A8HPCKfs5IUYEKfE6aMD'});
                         })(window, document, 'script', 'dataLayer', 'GTM-WL2PM76');
