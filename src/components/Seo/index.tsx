@@ -32,6 +32,9 @@ const Seo: React.FC<PropsType> = ({
       <meta property="og:type" content="website" />
       <meta property="og:url" content="" />
       <meta property="og:description" content={ogDescription} />
+      <script>
+        gtag('event', 'conversion', {'send_to': 'AW-880435751/A8HPCKfs5IUYEKfE6aMD'});
+      </script>
     </Helmet>
   );
 };
