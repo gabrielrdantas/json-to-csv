@@ -11,20 +11,28 @@ const Header: React.FC<HeaderProps> = ({ itemSelected, title }) => {
   return (
     <HeaderContainer>
       <Content>
-        <Title>{title}</Title>
-        <Menu itemSelected={itemSelected} />
+        <Section>
+          <Title>{title}</Title>
+          <Menu itemSelected={itemSelected} />
+        </Section>
       </Content>
     </HeaderContainer>
   );
 };
 
+const Section = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
 const HeaderContainer = styled.header`
-  background: #333;
+  background: #021c55;
   width: 100%;
-  padding: 15px 0;
 `;
 const Title = styled.h1`
   font-size: 26px;
   text-align: center;
+  color: #fff;
 `;
 export default Header;

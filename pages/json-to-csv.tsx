@@ -133,6 +133,12 @@ const ConvertJsonToCsv: React.FC = () => {
     }
   }, [jsonValue]);
 
+  const goFullScreen = () => {
+    const elem = document.getElementById('content-data') as HTMLElement;
+    if (elem.requestFullscreen) {
+      elem.requestFullscreen();
+    }
+  };
   return (
     <Wrapper>
       <Seo
@@ -166,53 +172,60 @@ const ConvertJsonToCsv: React.FC = () => {
         }}
       />
       <Header title="Convert JSON to CSV online" itemSelected={1} />
-      <Content>
-        <Subtitle>Input JSON</Subtitle>
-        <Container>
-          <InputData id="input-data-csv" ref={ref} onChange={onChangeJson} />
-        </Container>
+      <ContainerSection id="content-data">
+        <Content>
+          <Subtitle>Input JSON</Subtitle>
+          <Container>
+            <InputData id="input-data-csv" ref={ref} onChange={onChangeJson} />
+          </Container>
 
-        <ContainerFilter>
-          <Subtitle>Output CSV</Subtitle>
-          <FormFilter>
-            <Label disabledInput={filterDisabled} htmlFor="input-csv-json">
-              Filter field:
-            </Label>
-            <Input
-              ref={inputRef}
-              disabledInput={filterDisabled}
-              id="input-csv-json"
-              type="text"
-              placeholder="Insert fields separating with a comma"
-            />
-            <ButtonFilter
-              disabledInput={filterDisabled}
-              onClick={onClickFilter}
-              id="button-filter-csv"
+          <ContainerFilter>
+            <Subtitle>Output CSV</Subtitle>
+            <FormFilter>
+              <Label disabledInput={filterDisabled} htmlFor="input-csv-json">
+                Filter field:
+              </Label>
+              <Input
+                ref={inputRef}
+                disabledInput={filterDisabled}
+                id="input-csv-json"
+                type="text"
+                placeholder="Insert fields separating with a comma"
+              />
+              <ButtonFilter
+                disabledInput={filterDisabled}
+                onClick={onClickFilter}
+                id="button-filter-csv"
+              >
+                Filter
+              </ButtonFilter>
+            </FormFilter>
+          </ContainerFilter>
+          <MenuOptions
+            onClickFullScreen={() => {
+              goFullScreen();
+            }}
+            onClickDownload={() => {
+              if (csvValue) {
+                exportCSVFile(csvValue, 'jsonToCsv');
+              }
+            }}
+            onClickCopy={() => {
+              navigator.clipboard.writeText(csvValue);
+            }}
+          />
+          <Container>
+            <ResultFormatted
+              id="result-filter-csv"
+              contentEditable="true"
+              suppressContentEditableWarning
             >
-              Filter
-            </ButtonFilter>
-          </FormFilter>
-        </ContainerFilter>
-        <MenuOptions
-          onClickDownload={() => {
-            if (csvValue) {
-              exportCSVFile(csvValue, 'jsonToCsv');
-            }
-          }}
-          onClickCopy={() => {
-            navigator.clipboard.writeText(csvValue);
-          }}
-        />
-        <Container>
-          <ResultFormatted
-            id="result-filter-csv"
-            contentEditable="true"
-            suppressContentEditableWarning
-          >
-            {csvValue}
-          </ResultFormatted>
-        </Container>
+              {csvValue}
+            </ResultFormatted>
+          </Container>
+        </Content>
+      </ContainerSection>
+      <Content>
         <ContainerInfo>
           <SubtitleArticle>Comma-separated values</SubtitleArticle>
           <Text>
@@ -264,14 +277,22 @@ const ConvertJsonToCsv: React.FC = () => {
 
 export default ConvertJsonToCsv;
 
+const ContainerSection = styled.div`
+  width: 100%;
+  background: #2980b9;
+  padding: 20px 0 40px;
+`;
+
 const Container = styled.div`
   background: #fff;
   display: flex;
   height: 30vh;
+  border-radius: 20px;
 `;
 
 const InputData = styled.textarea`
   border: none;
+  border-radius: 20px;
   border-right: 1px solid #ccc;
   font-family: 'Roboto Slab', serif;
   color: #666;
@@ -283,6 +304,7 @@ const InputData = styled.textarea`
 `;
 
 const ResultFormatted = styled.pre`
+  border-radius: 20px;
   word-break: break-all;
   overflow: auto;
   font-family: 'Roboto Slab', serif;
@@ -330,6 +352,7 @@ const ContainerFilter = styled.div`
 `;
 
 const Label = styled.label<{ disabledInput: boolean }>`
+  color: #fff;
   margin: 0 15px 0 0;
   ${({ disabledInput }) => disabledInput && `opacity: 0.5;`}
   ${({ disabledInput }) => disabledInput && `pointer-events: none;`}
@@ -346,6 +369,7 @@ const ButtonFilter = styled.button<{ disabledInput: boolean }>`
   width: 100px;
   border-radius: 10px;
   margin: 0 0 0 15px;
+  color: #000;
   ${({ disabledInput }) => disabledInput && `opacity: 0.5;`}
   ${({ disabledInput }) => disabledInput && `pointer-events: none;`}
 `;

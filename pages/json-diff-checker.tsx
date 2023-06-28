@@ -227,64 +227,67 @@ const DiffChecker: React.FC = () => {
         }}
       />
       <Header title="Convert and diff checker json online" itemSelected={3} />
+      <ContainerSection id="content-data">
+        <Content>
+          <Container>
+            <AreaDiv>
+              <SubtitleContainer>
+                <Subtitle>Original JSON</Subtitle>
+                <Subtitle>Other JSON</Subtitle>
+              </SubtitleContainer>
+              <ContainerText>
+                <ContainerInput>
+                  <InputDataTextarea
+                    id="original-json-diff"
+                    ref={ref}
+                    contentEditable="true"
+                    onChange={onChangeValue1}
+                  />
+                </ContainerInput>
+
+                <ContainerInput>
+                  <InputDataTextarea
+                    id="other-json-diff"
+                    contentEditable="true"
+                    onChange={onChangeValue2}
+                  />
+                </ContainerInput>
+              </ContainerText>
+            </AreaDiv>
+          </Container>
+
+          {canShowResult && (
+            <>
+              <ContainerResult>
+                <AreaDiv>
+                  <SubtitleContainer>
+                    <Subtitle>Result Original JSON</Subtitle>
+                    <Subtitle>Result Other JSON</Subtitle>
+                  </SubtitleContainer>
+                  <ContainerText>
+                    <ContainerInput>
+                      <InputData id="result-original-json-diff">
+                        {resultOriginalText}
+                      </InputData>
+                    </ContainerInput>
+
+                    <ContainerInput>
+                      <InputData id="result-other-json-diff">
+                        {resultChangedText}
+                      </InputData>
+                    </ContainerInput>
+                  </ContainerText>
+                </AreaDiv>
+                <ContainerStatusDiff>
+                  <StatusDiff color="#c8f0da" items={itemsDiffOriginal} />
+                  <StatusDiff color="#ffcbbd" items={itemsDiffChanged} />
+                </ContainerStatusDiff>
+              </ContainerResult>
+            </>
+          )}
+        </Content>
+      </ContainerSection>
       <Content>
-        <Container>
-          <AreaDiv>
-            <SubtitleContainer>
-              <Subtitle>Original JSON</Subtitle>
-              <Subtitle>Other JSON</Subtitle>
-            </SubtitleContainer>
-            <ContainerText>
-              <ContainerInput>
-                <InputDataTextarea
-                  id="original-json-diff"
-                  ref={ref}
-                  contentEditable="true"
-                  onChange={onChangeValue1}
-                />
-              </ContainerInput>
-
-              <ContainerInput>
-                <InputDataTextarea
-                  id="other-json-diff"
-                  contentEditable="true"
-                  onChange={onChangeValue2}
-                />
-              </ContainerInput>
-            </ContainerText>
-          </AreaDiv>
-        </Container>
-
-        {canShowResult && (
-          <>
-            <ContainerResult>
-              <AreaDiv>
-                <SubtitleContainer>
-                  <Subtitle>Result Original JSON</Subtitle>
-                  <Subtitle>Result Other JSON</Subtitle>
-                </SubtitleContainer>
-                <ContainerText>
-                  <ContainerInput>
-                    <InputData id="result-original-json-diff">
-                      {resultOriginalText}
-                    </InputData>
-                  </ContainerInput>
-
-                  <ContainerInput>
-                    <InputData id="result-other-json-diff">
-                      {resultChangedText}
-                    </InputData>
-                  </ContainerInput>
-                </ContainerText>
-              </AreaDiv>
-              <ContainerStatusDiff>
-                <StatusDiff color="#c8f0da" items={itemsDiffOriginal} />
-                <StatusDiff color="#ffcbbd" items={itemsDiffChanged} />
-              </ContainerStatusDiff>
-            </ContainerResult>
-          </>
-        )}
-
         <ContainerInfo>
           <SubtitleArticle>Why compare two files?</SubtitleArticle>
           <Text>
@@ -317,15 +320,23 @@ const DiffChecker: React.FC = () => {
 
 export default DiffChecker;
 
+const ContainerSection = styled.div`
+  width: 100%;
+  background: #2980b9;
+  padding: 20px 0 40px;
+`;
+
 const Container = styled.div`
   display: flex;
   margin: 0;
+  border-radius: 20px;
 `;
 
 const ContainerResult = styled.div`
   display: flex;
   margin: 20px 0;
   align-items: end;
+  border-radius: 20px;
 `;
 
 const ContainerInput = styled.div`
@@ -336,6 +347,7 @@ const ContainerInput = styled.div`
 
 const InputData = styled.pre`
   border: none;
+  border-radius: 20px;
   border-right: 1px solid #ccc;
   font-family: 'Roboto Slab', serif;
   color: #666;
@@ -350,6 +362,7 @@ const InputData = styled.pre`
 
 const InputDataTextarea = styled.textarea`
   border: none;
+  border-radius: 20px;
   border-right: 1px solid #ccc;
   font-family: 'Roboto Slab', serif;
   color: #666;
@@ -382,7 +395,8 @@ const ContainerText = styled.div`
   width: 100%;
   overflow: auto;
   background: #fff;
-  height: 600px;
+  height: 605px;
+  border-radius: 20px;
 `;
 
 const AreaDiv = styled.div`

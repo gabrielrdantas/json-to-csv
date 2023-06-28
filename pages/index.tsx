@@ -16,8 +16,6 @@ import Schema from '../src/components/Schema';
 import RelatedLinks from '../src/components/RelatedLinks';
 import Content from '../src/components/Content';
 
-import GlobalStyle from '../src/styles/global';
-
 const JsonFormatter: React.FC = () => {
   const [jsonValue, setJsonValue] = useState('');
   const ref = useRef<HTMLTextAreaElement>(null);
@@ -52,6 +50,13 @@ const JsonFormatter: React.FC = () => {
     setJsonValue('');
   }, []);
 
+  const goFullScreen = () => {
+    const elem = document.getElementById('content-data') as HTMLElement;
+    if (elem.requestFullscreen) {
+      elem.requestFullscreen();
+    }
+  };
+
   return (
     <Wrapper>
       <Seo
@@ -85,37 +90,43 @@ const JsonFormatter: React.FC = () => {
         }}
       />
       <Header title="Convert and formatter json" itemSelected={0} />
-      <Content>
-        <Subtitle>Convert JSON online</Subtitle>
-        <MenuOptionsContainer>
-          <MenuOptions
-            onClickDownload={() => {
-              if (jsonValue) {
-                exportJSONFile(jsonValue, 'jsonToCsv');
-              }
-            }}
-            onClickCopy={() => {
-              navigator.clipboard.writeText(
-                JSON.stringify(JSON.parse(jsonValue)),
-              );
-            }}
-          />
-        </MenuOptionsContainer>
-        <Container>
-          <InputData
-            id="data-json-formatter"
-            ref={ref}
-            onChange={onChangeJson}
-          />
-          <ResultFormatted
-            id="result-json-formatter"
-            contentEditable="true"
-            suppressContentEditableWarning
-          >
-            {jsonValue}
-          </ResultFormatted>
-        </Container>
 
+      <ContainerSection>
+        <Content>
+          <MenuOptionsContainer>
+            <MenuOptions
+              onClickFullScreen={() => {
+                goFullScreen();
+              }}
+              onClickDownload={() => {
+                if (jsonValue) {
+                  exportJSONFile(jsonValue, 'jsonToCsv');
+                }
+              }}
+              onClickCopy={() => {
+                navigator.clipboard.writeText(
+                  JSON.stringify(JSON.parse(jsonValue)),
+                );
+              }}
+            />
+          </MenuOptionsContainer>
+          <Container id="content-data">
+            <InputData
+              id="data-json-formatter"
+              ref={ref}
+              onChange={onChangeJson}
+            />
+            <ResultFormatted
+              id="result-json-formatter"
+              contentEditable="true"
+              suppressContentEditableWarning
+            >
+              {jsonValue}
+            </ResultFormatted>
+          </Container>
+        </Content>
+      </ContainerSection>
+      <Content>
         <ContainerInfo>
           <SubtitleArticle>JSON Introduction</SubtitleArticle>
           <Text>
@@ -171,8 +182,6 @@ const JsonFormatter: React.FC = () => {
         />
       </Content>
       <Footer />
-
-      <GlobalStyle />
     </Wrapper>
   );
 };
@@ -183,15 +192,23 @@ const MenuOptionsContainer = styled.div`
   margin: 0;
 `;
 
+const ContainerSection = styled.div`
+  width: 100%;
+  background: #2980b9;
+  padding: 20px 0 40px;
+`;
+
 const Container = styled.div`
   background: #fff;
   display: flex;
   height: 60vh;
   margin: 0;
+  border-radius: 20px;
 `;
 
 const InputData = styled.textarea`
   border: none;
+  border-radius: 20px;
   border-right: 1px solid #ccc;
   font-family: 'Roboto Slab', serif;
   color: #666;
@@ -203,6 +220,7 @@ const InputData = styled.textarea`
 `;
 
 const ResultFormatted = styled.pre`
+  border-radius: 20px;
   width: 50%;
   word-break: break-all;
   overflow: auto;
@@ -214,11 +232,6 @@ const ResultFormatted = styled.pre`
   width: 50%;
   word-break: break-all;
   overflow: auto;
-`;
-const Subtitle = styled.h2`
-  font-size: 26px;
-  color: #fff;
-  margin: 20px 0;
 `;
 
 const ContainerInfo = styled.article`

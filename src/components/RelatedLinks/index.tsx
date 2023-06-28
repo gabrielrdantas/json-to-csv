@@ -39,7 +39,7 @@ const Subtitle = styled.h4`
   margin: 35px 0 20px;
 `;
 const Link = styled.a`
-  color: #fff;
+  color: #333;
   text-decoration: none;
   &:hover {
     text-decoration: underline;
@@ -47,6 +47,7 @@ const Link = styled.a`
 `;
 const List = styled.li`
   margin: 0 20px 0 0;
+  color: #333;
 `;
 
 export default RelatedLinks;

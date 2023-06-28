@@ -95,12 +95,15 @@ const ConvertJsonToPdf: React.FC = () => {
         }}
       />
       <Header title="Convert JSON to PDF online" itemSelected={2} />
+      <ContainerSection id="content-data">
+        <Content>
+          <Subtitle>Insert JSON</Subtitle>
+          <Container>
+            <InputData id="data-pdf-json" ref={ref} onChange={onChangeJson} />
+          </Container>
+        </Content>
+      </ContainerSection>
       <Content>
-        <Subtitle>Convert JSON to PDF online</Subtitle>
-        <Container>
-          <InputData id="data-pdf-json" ref={ref} onChange={onChangeJson} />
-        </Container>
-
         <ContainerInfo>
           <SubtitleArticle>What is Adobe PDF?</SubtitleArticle>
           <Text>
@@ -163,10 +166,17 @@ const ConvertJsonToPdf: React.FC = () => {
 
 export default ConvertJsonToPdf;
 
+const ContainerSection = styled.div`
+  width: 100%;
+  background: #2980b9;
+  padding: 20px 0 40px;
+`;
+
 const Container = styled.div`
   background: #fff;
   display: flex;
   height: 60vh;
+  border-radius: 20px;
 `;
 
 const InputData = styled.textarea`
@@ -179,6 +189,7 @@ const InputData = styled.textarea`
   width: 50%;
   flex: 1;
   padding: 20px;
+  border-radius: 20px;
 `;
 const Subtitle = styled.h2`
   font-size: 26px;
