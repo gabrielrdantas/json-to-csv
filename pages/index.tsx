@@ -199,14 +199,19 @@ const ContainerSection = styled.div`
 `;
 
 const Container = styled.div`
-  background: #fff;
   display: flex;
   height: 60vh;
   margin: 0;
   border-radius: 20px;
+  gap: 20px;
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const InputData = styled.textarea`
+  background: #fff;
   border: none;
   border-radius: 20px;
   border-right: 1px solid #ccc;
@@ -217,9 +222,14 @@ const InputData = styled.textarea`
   width: 50%;
   flex: 1;
   padding: 20px;
+  @media (max-width: 1024px) {
+    width: 90%;
+    margin-top: 20px;
+  }
 `;
 
 const ResultFormatted = styled.pre`
+  background: #fff;
   border-radius: 20px;
   width: 50%;
   word-break: break-all;
@@ -232,6 +242,10 @@ const ResultFormatted = styled.pre`
   width: 50%;
   word-break: break-all;
   overflow: auto;
+  @media (max-width: 1024px) {
+    width: 90%;
+    flex: 1;
+  }
 `;
 
 const ContainerInfo = styled.article`
