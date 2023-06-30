@@ -29,7 +29,7 @@ const JsonFormatter: React.FC = () => {
   const exportJSONFile = (json: string, fileTitle: string) => {
     const exportedFilenmae = `${fileTitle}.json` || 'file.json';
     const dataStr = `data:text/json;charset=utf-8,${encodeURIComponent(
-      JSON.stringify(JSON.parse(json)),
+      JSON.stringify(JSON.parse(JSON.stringify(json))),
     )}`;
     const link = document.createElement('a');
     if (link.download !== undefined) {
@@ -42,12 +42,40 @@ const JsonFormatter: React.FC = () => {
     }
   };
 
-  const onChangeJson = useCallback((e: ChangeEvent<HTMLTextAreaElement>) => {
-    if (e.target.value) {
-      setJsonValue(JSON.stringify(JSON.parse(e.target.value), null, '\t'));
-      return;
+  const isJson = (value: any) => {
+    let response = false;
+    try {
+      JSON.parse(value);
+      response = true;
+    } catch (err) {
+      response = false;
     }
-    setJsonValue('');
+    return response;
+  };
+
+  const objToJSON = (value: any) => {
+    return value.replace(/(\w+:)|(\w+ :)/g, (s: any) => {
+      return `"${s.substring(0, s.length - 1)}":`;
+    });
+  };
+
+  const onChangeJson = useCallback((e: ChangeEvent<HTMLTextAreaElement>) => {
+    const { value } = e.target;
+    try {
+      if (value) {
+        if (isJson(value)) {
+          setJsonValue(JSON.stringify(JSON.parse(value), null, '\t'));
+        } else {
+          setJsonValue(
+            JSON.stringify(JSON.parse(objToJSON(value)), null, '\t'),
+          );
+        }
+        return;
+      }
+      setJsonValue('');
+    } catch (err) {
+      console.log(err);
+    }
   }, []);
 
   const goFullScreen = () => {
