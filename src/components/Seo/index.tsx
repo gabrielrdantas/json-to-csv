@@ -30,7 +30,6 @@ const Seo: React.FC<PropsType> = ({
   // }, []);
   return (
     <Helmet>
-      <meta charSet="utf-8" />
       <title>{title}</title>
       <link rel="canonical" href={canonical} />
       <meta name="description" content={description} />
