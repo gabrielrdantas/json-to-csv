@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import Script from 'next/script';
 
-import GlobalStyle from '../src/styles/global';
 
 function MyApp({ Component, pageProps }) {
     return (
@@ -59,7 +58,7 @@ function MyApp({ Component, pageProps }) {
               style={{display: "none", visibility: "hidden"}} />
             </noscript>
 
-            <GlobalStyle />
+  
             <Component {...pageProps} />
         </>
     )

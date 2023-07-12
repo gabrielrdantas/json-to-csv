@@ -1,16 +1,27 @@
 import React, { useCallback, ChangeEvent, useRef, useEffect } from 'react';
-
+import dynamic from 'next/dynamic';
 import styled from 'styled-components';
+
 import pdfMake from 'pdfmake/build/pdfmake.js';
 import pdfFonts from 'pdfmake/build/vfs_fonts.js';
-import Header from '../src/components/Header';
-import Footer from '../src/components/Footer';
 
-import Content from '../src/components/Content';
-import RelatedLinks from '../src/components/RelatedLinks';
-import Seo from '../src/components/Seo';
-import Schema from '../src/components/Schema';
-import Wrapper from '../src/components/Wrapper';
+import GlobalStyle from '../src/styles/global';
+
+const Header = dynamic(import('../src/components/Header'));
+const Footer = dynamic(import('../src/components/Footer'));
+const Wrapper = dynamic(import('../src/components/Wrapper'));
+const Seo = dynamic(import('../src/components/Seo'));
+const Schema = dynamic(import('../src/components/Schema'));
+const RelatedLinks = dynamic(import('../src/components/RelatedLinks'));
+const Content = dynamic(import('../src/components/Content'));
+
+// import Header from '../src/components/Header';
+// import Footer from '../src/components/Footer';
+// import Content from '../src/components/Content';
+// import RelatedLinks from '../src/components/RelatedLinks';
+// import Seo from '../src/components/Seo';
+// import Schema from '../src/components/Schema';
+// import Wrapper from '../src/components/Wrapper';
 
 const ConvertJsonToPdf: React.FC = () => {
   const ref = useRef<HTMLTextAreaElement>(null);
@@ -64,6 +75,7 @@ const ConvertJsonToPdf: React.FC = () => {
 
   return (
     <Wrapper>
+      <GlobalStyle />
       <Seo
         title="Convert JSON to PDF online"
         description="Convert JSON to PDF online, this page is simple, fast and practical!"
