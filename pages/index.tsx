@@ -237,6 +237,7 @@ const ContainerSection = styled.div`
   width: 100%;
   background: #2980b9;
   padding: 20px 0 40px;
+  margin: 0;
 `;
 
 const Container = styled.div`

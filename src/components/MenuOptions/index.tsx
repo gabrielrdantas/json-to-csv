@@ -54,6 +54,8 @@ const MenuItem = styled.li`
   display: flex;
   gap: 5px;
   color: #fff;
+  line-height: 26px;
+  height: 40px;
 `;
 
 const Span = styled.span`
