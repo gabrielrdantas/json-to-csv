@@ -15,13 +15,7 @@ function MyApp({ Component, pageProps }) {
                   name="description"
                   content="Convert to json, formatter json, convert json to csv, json to pdf and checker your json files"
                 />
-                <link rel="preconnect" href="https://fonts.gstatic.com" />
-                <link
-                  async
-                  href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;500&display=swap"
-                  rel="stylesheet"
-                />
-
+                
                 <title>Convert and formatter json to csv, pdf and diff checker</title>
                 
                 <script dangerouslySetInnerHTML={{

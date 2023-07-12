@@ -14,7 +14,7 @@ export default createGlobalStyle`
   }
 
   body, input, button {
-    font-family: 'Roboto Slab', serif;
+    font-family: arial;
     font-size: 16px;
   }
 
@@ -25,5 +25,5 @@ export default createGlobalStyle`
   button {
     cursor: pointer;
   }
-
+ 
 `;
