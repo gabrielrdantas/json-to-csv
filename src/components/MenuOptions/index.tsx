@@ -56,6 +56,8 @@ const MenuItem = styled.li`
   line-height: 26px;
   height: 40px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
 `;
 
 const Span = styled.span`
