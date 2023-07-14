@@ -40,13 +40,12 @@ const MenuOptions: React.FC<MenuOptionsProps> = ({
 };
 
 const MenuUI = styled.ul`
-  background: #2980b9;
+  background: #0f598a;
   display: flex;
   list-style: none;
   height: 40px;
   align-items: center;
   justify-content: right;
-  cursor: pointer;
 `;
 
 const MenuItem = styled.li`
@@ -56,6 +55,7 @@ const MenuItem = styled.li`
   color: #fff;
   line-height: 26px;
   height: 40px;
+  cursor: pointer;
 `;
 
 const Span = styled.span`

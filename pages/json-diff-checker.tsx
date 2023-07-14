@@ -332,7 +332,7 @@ export default DiffChecker;
 
 const ContainerSection = styled.div`
   width: 100%;
-  background: #2980b9;
+  background: #0f598a;
   padding: 20px 0 40px;
 `;
 
@@ -431,6 +431,6 @@ const Text = styled.p`
   line-height: 25px;
 `;
 
-const SubtitleArticle = styled.h3`
+const SubtitleArticle = styled.h2`
   margin: 35px 0;
 `;

@@ -35,7 +35,7 @@ const Ul = styled.ul`
   display: flex;
   list-style: none;
 `;
-const Subtitle = styled.h4`
+const Subtitle = styled.h3`
   margin: 35px 0 20px;
 `;
 const Link = styled.a`

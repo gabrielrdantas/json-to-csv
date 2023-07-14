@@ -101,10 +101,10 @@ const JsonFormatter: React.FC = () => {
     <Wrapper>
       <GlobalStyle />
       <Seo
-        title="Convert and formatter json to csv, pdf and diff checker"
-        description="Convert to json, formatter json, convert json to csv, pdf and checker your files"
-        ogDescription="Convert to json, formatter json, convert json to csv, pdf and checker your files"
-        ogTitle="Convert and formatter json to csv, pdf and diff checker"
+        title="Convert and format json to csv, pdf and diff checker"
+        description="Compare json online, format json, json diff online, json compare online and checker your files"
+        ogDescription="Compare json online, format json, json diff online, json compare online and checker your files"
+        ogTitle="Convert and format json to csv, pdf and diff checker"
         canonical="https://convertjsononline.com"
       />
       <Schema
@@ -152,6 +152,7 @@ const JsonFormatter: React.FC = () => {
             />
           </MenuOptionsContainer>
           <Container id="content-data">
+            <Label htmlFor="data-json-formatter">Insert here</Label>
             <InputData
               id="data-json-formatter"
               ref={ref}
@@ -235,7 +236,7 @@ const MenuOptionsContainer = styled.div`
 
 const ContainerSection = styled.div`
   width: 100%;
-  background: #2980b9;
+  background: #0f598a;
   padding: 20px 0 40px;
   margin: 0;
 `;
@@ -246,6 +247,7 @@ const Container = styled.div`
   margin: 0;
   border-radius: 20px;
   gap: 20px;
+  position: relative;
   @media (max-width: 1024px) {
     flex-direction: column;
     align-items: center;
@@ -298,6 +300,12 @@ const Text = styled.p`
   line-height: 25px;
 `;
 
-const SubtitleArticle = styled.h3`
+const SubtitleArticle = styled.h2`
   margin: 35px 0;
+`;
+
+const Label = styled.label`
+  color: #fff;
+  position: absolute;
+  top: -25px;
 `;

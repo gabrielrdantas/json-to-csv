@@ -18,7 +18,7 @@ const FooterContainer = styled.footer`
   height: 60px;
   justify-content: center;
 `;
-const Title = styled.h6`
+const Title = styled.h4`
   font-size: 16px;
   text-align: center;
   color: #fff;
