@@ -237,7 +237,6 @@ const MenuOptionsContainer = styled.div`
 const ContainerSection = styled.div`
   width: 100%;
   background: #0f598a;
-  padding: 20px 0 40px;
   margin: 0;
 `;
 
