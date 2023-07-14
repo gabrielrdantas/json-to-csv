@@ -29,6 +29,7 @@ const Section = styled.div`
 const HeaderContainer = styled.header`
   background: #021c55;
   width: 100%;
+  height: 80px;
 `;
 const Title = styled.h1`
   font-size: 26px;
