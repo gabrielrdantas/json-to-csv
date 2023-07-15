@@ -1,3 +1,4 @@
 module.exports = {
-    trailingSlash: false
+    trailingSlash: false,
+    nextScriptWorkers: true
 }

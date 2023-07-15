@@ -38,12 +38,11 @@ function MyApp({ Component, pageProps }) {
                         `
                     }}>
                 </script> */}
-                <script 
-                  defer 
-                  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6901180360285673"
-                  crossorigin="anonymous"></script>
-            </Head>
-            <Script src="https://polyfill.io/v3/polyfill.min.js" strategy="beforeInteractive" />
+             </Head>
+             <Script 
+                  strategy="beforeInteractive" 
+                  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6901180360285673" />
+            {/* <Script src="https://polyfill.io/v3/polyfill.min.js" strategy="beforeInteractive" /> */}
             {/* <noscript>
               <iframe
               src="https://www.googletagmanager.com/ns.html?id=GTM-WL2PM76"
