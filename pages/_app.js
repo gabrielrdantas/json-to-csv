@@ -17,7 +17,7 @@ function MyApp({ Component, pageProps }) {
                 />
 
                 <title>Convert and formatter json to csv, pdf and diff checker</title>
-{/*                 
+                
                 <script dangerouslySetInnerHTML={{
                         __html: `
                         (function (w, d, s, l, i) {
@@ -37,19 +37,19 @@ function MyApp({ Component, pageProps }) {
                         })(window, document, 'script', 'dataLayer', 'GTM-WL2PM76');
                         `
                     }}>
-                </script> */}
+                </script>
              </Head>
              <Script 
                   strategy="beforeInteractive" 
                   src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6901180360285673" />
             {/* <Script src="https://polyfill.io/v3/polyfill.min.js" strategy="beforeInteractive" /> */}
-            {/* <noscript>
+            <noscript>
               <iframe
               src="https://www.googletagmanager.com/ns.html?id=GTM-WL2PM76"
               height="0"
               width="0"
               style={{display: "none", visibility: "hidden"}} />
-            </noscript> */}
+            </noscript>
 
   
             <Component {...pageProps} />
