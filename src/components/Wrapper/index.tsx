@@ -6,6 +6,7 @@ const Content: React.FC = ({ children }) => {
 };
 
 const ContentUi = styled.section`
+  height: 100vh;
   display: flex;
   flex-direction: column;
 `;
