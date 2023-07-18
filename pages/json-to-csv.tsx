@@ -184,69 +184,75 @@ const ConvertJsonToCsv: React.FC = () => {
         }}
       />
       <Header title="Convert JSON to CSV online" itemSelected={1} />
-      <ContainerSection id="content-data">
-        <Content>
-          <Subtitle>Input JSON</Subtitle>
-          <Container>
-            <InputData id="input-data-csv" ref={ref} onChange={onChangeJson} />
-          </Container>
-
-          <ContainerFilter>
-            <Subtitle>Output CSV</Subtitle>
-            <FormFilter>
-              <Label disabledInput={filterDisabled} htmlFor="input-csv-json">
-                Filter field:
-              </Label>
-              <Input
-                ref={inputRef}
-                disabledInput={filterDisabled}
-                id="input-csv-json"
-                type="text"
-                placeholder="Insert fields separating with a comma"
+      <div>
+        <ContainerSection id="content-data">
+          <Content>
+            <Subtitle>Input JSON</Subtitle>
+            <Container>
+              <InputData
+                id="input-data-csv"
+                ref={ref}
+                onChange={onChangeJson}
               />
-              <ButtonFilter
-                disabledInput={filterDisabled}
-                onClick={onClickFilter}
-                id="button-filter-csv"
-              >
-                Filter
-              </ButtonFilter>
-            </FormFilter>
-          </ContainerFilter>
-          <MenuOptions
-            onClickFullScreen={() => {
-              goFullScreen();
-            }}
-            onClickDownload={() => {
-              if (csvValue) {
-                exportCSVFile(csvValue, 'jsonToCsv');
-              }
-            }}
-            onClickCopy={() => {
-              navigator.clipboard.writeText(csvValue);
-            }}
-          />
-          <Container>
-            <ResultFormatted
-              id="result-filter-csv"
-              contentEditable="true"
-              suppressContentEditableWarning
-            >
-              {csvValue}
-            </ResultFormatted>
-          </Container>
+            </Container>
 
-          <RelatedLinks
-            bottom="-30px"
-            data={[
-              {
-                name: 'Google csv',
-                link: 'https://support.google.com/google-ads/answer/9004364?hl=en',
-              },
-            ]}
-          />
-        </Content>
-      </ContainerSection>
+            <ContainerFilter>
+              <Subtitle>Output CSV</Subtitle>
+              <FormFilter>
+                <Label disabledInput={filterDisabled} htmlFor="input-csv-json">
+                  Filter field:
+                </Label>
+                <Input
+                  ref={inputRef}
+                  disabledInput={filterDisabled}
+                  id="input-csv-json"
+                  type="text"
+                  placeholder="Insert fields separating with a comma"
+                />
+                <ButtonFilter
+                  disabledInput={filterDisabled}
+                  onClick={onClickFilter}
+                  id="button-filter-csv"
+                >
+                  Filter
+                </ButtonFilter>
+              </FormFilter>
+            </ContainerFilter>
+            <MenuOptions
+              onClickFullScreen={() => {
+                goFullScreen();
+              }}
+              onClickDownload={() => {
+                if (csvValue) {
+                  exportCSVFile(csvValue, 'jsonToCsv');
+                }
+              }}
+              onClickCopy={() => {
+                navigator.clipboard.writeText(csvValue);
+              }}
+            />
+            <Container>
+              <ResultFormatted
+                id="result-filter-csv"
+                contentEditable="true"
+                suppressContentEditableWarning
+              >
+                {csvValue}
+              </ResultFormatted>
+            </Container>
+
+            <RelatedLinks
+              bottom="-30px"
+              data={[
+                {
+                  name: 'Google csv',
+                  link: 'https://support.google.com/google-ads/answer/9004364?hl=en',
+                },
+              ]}
+            />
+          </Content>
+        </ContainerSection>
+      </div>
     </Wrapper>
   );
 };

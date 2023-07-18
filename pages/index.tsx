@@ -129,60 +129,61 @@ const JsonFormatter: React.FC = () => {
         }}
       />
       <Header title="Format JSON Online" itemSelected={0} />
-
-      <ContainerSection>
-        <Content>
-          <MenuOptionsContainer>
-            <MenuOptions
-              onClickFullScreen={() => {
-                goFullScreen();
-              }}
-              onClickDownload={() => {
-                if (jsonValue) {
-                  exportJSONFile(jsonValue, 'jsonToCsv');
-                }
-              }}
-              onClickCopy={() => {
-                navigator.clipboard.writeText(
-                  JSON.stringify(JSON.parse(jsonValue)),
-                );
-              }}
-            />
-          </MenuOptionsContainer>
-          <Container id="content-data">
-            <Label htmlFor="data-json-formatter">Insert here</Label>
-            <InputData
-              id="data-json-formatter"
-              ref={ref}
-              onChange={onChangeJson}
-            />
-            <ResultFormatted
-              id="result-json-formatter"
-              contentEditable="true"
-              suppressContentEditableWarning
-            >
-              {jsonValue}
-            </ResultFormatted>
-          </Container>
-        </Content>
-        <RelatedLinks
-          bottom="-100px"
-          data={[
-            {
-              name: 'Convert Javascript Object to JSON',
-              link: 'https://www.convertsimple.com/convert-javascript-to-json/',
-            },
-            {
-              name: 'Converting JavaScript Object to JSON',
-              link: 'https://reqbin.com/code/javascript/x1ezvres/javascript-object-to-json-example#:~:text=To%20convert%20a%20JavaScript%20object,into%20a%20JSON%20data%20string.',
-            },
-            {
-              name: 'How to Convert JS Object to JSON',
-              link: 'https://www.tutorialrepublic.com/faq/how-to-convert-js-object-to-json-string.php',
-            },
-          ]}
-        />
-      </ContainerSection>
+      <div>
+        <ContainerSection>
+          <Content>
+            <MenuOptionsContainer>
+              <MenuOptions
+                onClickFullScreen={() => {
+                  goFullScreen();
+                }}
+                onClickDownload={() => {
+                  if (jsonValue) {
+                    exportJSONFile(jsonValue, 'jsonToCsv');
+                  }
+                }}
+                onClickCopy={() => {
+                  navigator.clipboard.writeText(
+                    JSON.stringify(JSON.parse(jsonValue)),
+                  );
+                }}
+              />
+            </MenuOptionsContainer>
+            <Container id="content-data">
+              <Label htmlFor="data-json-formatter">Insert here</Label>
+              <InputData
+                id="data-json-formatter"
+                ref={ref}
+                onChange={onChangeJson}
+              />
+              <ResultFormatted
+                id="result-json-formatter"
+                contentEditable="true"
+                suppressContentEditableWarning
+              >
+                {jsonValue}
+              </ResultFormatted>
+            </Container>
+          </Content>
+          <RelatedLinks
+            bottom="-100px"
+            data={[
+              {
+                name: 'Convert Javascript Object to JSON',
+                link: 'https://www.convertsimple.com/convert-javascript-to-json/',
+              },
+              {
+                name: 'Converting JavaScript Object to JSON',
+                link: 'https://reqbin.com/code/javascript/x1ezvres/javascript-object-to-json-example#:~:text=To%20convert%20a%20JavaScript%20object,into%20a%20JSON%20data%20string.',
+              },
+              {
+                name: 'How to Convert JS Object to JSON',
+                link: 'https://www.tutorialrepublic.com/faq/how-to-convert-js-object-to-json-string.php',
+              },
+            ]}
+          />
+        </ContainerSection>
+      </div>
     </Wrapper>
   );
 };

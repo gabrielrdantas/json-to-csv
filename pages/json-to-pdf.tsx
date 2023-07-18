@@ -106,31 +106,33 @@ const ConvertJsonToPdf: React.FC = () => {
         }}
       />
       <Header title="Convert JSON to PDF online" itemSelected={2} />
-      <ContainerSection id="content-data">
-        <Content>
-          <Subtitle>Insert JSON</Subtitle>
-          <Container>
-            <InputData id="data-pdf-json" ref={ref} onChange={onChangeJson} />
-          </Container>
-        </Content>
-      </ContainerSection>
-      <RelatedLinks
-        bottom="70px"
-        data={[
-          {
-            name: 'adobe.com',
-            link: 'https://www.adobe.com/en/acrobat/complete-pdf-solution.html?mv=search&ef_id=Cj0KCQiA2sqOBhCGARIsAPuPK0hNLSwV_ZzDdZ-rXOu-BBQmWAqzTA7zCuh2kVOdOn3I59D_9dxM3aIaAsOHEALw_wcB:G:s&s_kwcid=AL!3085!3!479444604857!e!!g!!adobe%20pdf&gclid=Cj0KCQiA2sqOBhCGARIsAPuPK0hNLSwV_ZzDdZ-rXOu-BBQmWAqzTA7zCuh2kVOdOn3I59D_9dxM3aIaAsOHEALw_wcB',
-          },
-          {
-            name: 'download adobe acrobat reader dc',
-            link: 'https://auth.services.adobe.com/en_US/index.html?callback=https%3A%2F%2Fims-na1.adobelogin.com%2Fims%2Fadobeid%2FCCHomeWeb1%2FAdobeID%2Ftoken%3Fredirect_uri%3Dhttps%253A%252F%252Fcreativecloud.adobe.com%252Fapps%252Facrobat-pdf%253Fpromoid%253DH822XQF9%2526mv%253Dother%2523from_ims%253Dtrue%2526old_hash%253D%2526api%253Dauthorize%26code_challenge_method%3Dplain%26use_ms_for_expiry%3Dtrue&client_id=CCHomeWeb1&scope=AdobeID%2Copenid%2Cgnav%2Ccreative_cloud%2Cread_organizations%2Ccreative_sdk%2Cadditional_info.optionalAgreements%2Cadditional_info.screen_name%2Cadditional_info.roles%2Csao.ccprivate%2Ctk_platform%2Cpiip_read&denied_callback=https%3A%2F%2Fims-na1.adobelogin.com%2Fims%2Fdenied%2FCCHomeWeb1%3Fredirect_uri%3Dhttps%253A%252F%252Fcreativecloud.adobe.com%252Fapps%252Facrobat-pdf%253Fpromoid%253DH822XQF9%2526mv%253Dother%2523from_ims%253Dtrue%2526old_hash%253D%2526api%253Dauthorize%26response_type%3Dtoken&relay=ef9f92e5-de45-4e9a-9be5-2a224722f74c&locale=en_US&flow_type=token&idp_flow_type=login#/',
-          },
-          {
-            name: 'download google play adobe reader',
-            link: 'https://play.google.com/store/apps/details?id=com.adobe.reader&hl=pt_BR&gl=US',
-          },
-        ]}
-      />
+      <div>
+        <ContainerSection id="content-data">
+          <Content>
+            <Subtitle>Insert JSON</Subtitle>
+            <Container>
+              <InputData id="data-pdf-json" ref={ref} onChange={onChangeJson} />
+            </Container>
+          </Content>
+        </ContainerSection>
+        <RelatedLinks
+          bottom="70px"
+          data={[
+            {
+              name: 'adobe.com',
+              link: 'https://www.adobe.com/en/acrobat/complete-pdf-solution.html?mv=search&ef_id=Cj0KCQiA2sqOBhCGARIsAPuPK0hNLSwV_ZzDdZ-rXOu-BBQmWAqzTA7zCuh2kVOdOn3I59D_9dxM3aIaAsOHEALw_wcB:G:s&s_kwcid=AL!3085!3!479444604857!e!!g!!adobe%20pdf&gclid=Cj0KCQiA2sqOBhCGARIsAPuPK0hNLSwV_ZzDdZ-rXOu-BBQmWAqzTA7zCuh2kVOdOn3I59D_9dxM3aIaAsOHEALw_wcB',
+            },
+            {
+              name: 'download adobe acrobat reader dc',
+              link: 'https://auth.services.adobe.com/en_US/index.html?callback=https%3A%2F%2Fims-na1.adobelogin.com%2Fims%2Fadobeid%2FCCHomeWeb1%2FAdobeID%2Ftoken%3Fredirect_uri%3Dhttps%253A%252F%252Fcreativecloud.adobe.com%252Fapps%252Facrobat-pdf%253Fpromoid%253DH822XQF9%2526mv%253Dother%2523from_ims%253Dtrue%2526old_hash%253D%2526api%253Dauthorize%26code_challenge_method%3Dplain%26use_ms_for_expiry%3Dtrue&client_id=CCHomeWeb1&scope=AdobeID%2Copenid%2Cgnav%2Ccreative_cloud%2Cread_organizations%2Ccreative_sdk%2Cadditional_info.optionalAgreements%2Cadditional_info.screen_name%2Cadditional_info.roles%2Csao.ccprivate%2Ctk_platform%2Cpiip_read&denied_callback=https%3A%2F%2Fims-na1.adobelogin.com%2Fims%2Fdenied%2FCCHomeWeb1%3Fredirect_uri%3Dhttps%253A%252F%252Fcreativecloud.adobe.com%252Fapps%252Facrobat-pdf%253Fpromoid%253DH822XQF9%2526mv%253Dother%2523from_ims%253Dtrue%2526old_hash%253D%2526api%253Dauthorize%26response_type%3Dtoken&relay=ef9f92e5-de45-4e9a-9be5-2a224722f74c&locale=en_US&flow_type=token&idp_flow_type=login#/',
+            },
+            {
+              name: 'download google play adobe reader',
+              link: 'https://play.google.com/store/apps/details?id=com.adobe.reader&hl=pt_BR&gl=US',
+            },
+          ]}
+        />
+      </div>
     </Wrapper>
   );
 };

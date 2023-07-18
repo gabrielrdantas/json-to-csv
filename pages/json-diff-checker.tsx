@@ -236,87 +236,89 @@ const DiffChecker: React.FC = () => {
         }}
       />
       <Header title="JSON Diff Online - JSON compare" itemSelected={3} />
-      <ContainerSection id="content-data">
-        <Content>
-          <Container>
-            <AreaDiv>
-              <SubtitleContainer>
-                <Subtitle>Original JSON</Subtitle>
-                <Subtitle>Other JSON</Subtitle>
-              </SubtitleContainer>
-              <ContainerText>
-                <ContainerInput>
-                  <InputDataTextarea
-                    id="original-json-diff"
-                    ref={ref}
-                    contentEditable="true"
-                    onChange={onChangeValue1}
-                  />
-                </ContainerInput>
+      <div>
+        <ContainerSection id="content-data">
+          <Content>
+            <Container>
+              <AreaDiv>
+                <SubtitleContainer>
+                  <Subtitle>Original JSON</Subtitle>
+                  <Subtitle>Other JSON</Subtitle>
+                </SubtitleContainer>
+                <ContainerText>
+                  <ContainerInput>
+                    <InputDataTextarea
+                      id="original-json-diff"
+                      ref={ref}
+                      contentEditable="true"
+                      onChange={onChangeValue1}
+                    />
+                  </ContainerInput>
 
-                <ContainerInput>
-                  <InputDataTextarea
-                    id="other-json-diff"
-                    contentEditable="true"
-                    onChange={onChangeValue2}
-                  />
-                </ContainerInput>
-              </ContainerText>
-            </AreaDiv>
-          </Container>
+                  <ContainerInput>
+                    <InputDataTextarea
+                      id="other-json-diff"
+                      contentEditable="true"
+                      onChange={onChangeValue2}
+                    />
+                  </ContainerInput>
+                </ContainerText>
+              </AreaDiv>
+            </Container>
 
-          {canShowResult && (
-            <>
-              <ContainerResult>
-                <AreaDiv>
-                  <SubtitleContainer>
-                    <Subtitle>Result Original JSON</Subtitle>
-                    <Subtitle>Result Other JSON</Subtitle>
-                  </SubtitleContainer>
-                  <ContainerText>
-                    <ContainerInput>
-                      <InputData id="result-original-json-diff">
-                        {resultOriginalText}
-                      </InputData>
-                    </ContainerInput>
+            {canShowResult && (
+              <>
+                <ContainerResult>
+                  <AreaDiv>
+                    <SubtitleContainer>
+                      <Subtitle>Result Original JSON</Subtitle>
+                      <Subtitle>Result Other JSON</Subtitle>
+                    </SubtitleContainer>
+                    <ContainerText>
+                      <ContainerInput>
+                        <InputData id="result-original-json-diff">
+                          {resultOriginalText}
+                        </InputData>
+                      </ContainerInput>
 
-                    <ContainerInput>
-                      <InputData id="result-other-json-diff">
-                        {resultChangedText}
-                      </InputData>
-                    </ContainerInput>
-                  </ContainerText>
-                </AreaDiv>
-                <ContainerStatusDiff>
-                  <StatusDiff color="#c8f0da" items={itemsDiffOriginal} />
-                  <StatusDiff color="#ffcbbd" items={itemsDiffChanged} />
-                </ContainerStatusDiff>
-              </ContainerResult>
-            </>
-          )}
-        </Content>
-      </ContainerSection>
-      <RelatedLinks
-        bottom="50px"
-        data={[
-          {
-            name: 'Json lint',
-            link: 'https://www.jsonlint.com/',
-          },
-          {
-            name: 'Json Diff',
-            link: 'https://www.jsondiff.com/',
-          },
-          {
-            name: 'Json Compare',
-            link: 'https://jsoncompare.org/',
-          },
-          {
-            name: 'Diff check json',
-            link: 'https://jsoncompare.org/',
-          },
-        ]}
-      />
+                      <ContainerInput>
+                        <InputData id="result-other-json-diff">
+                          {resultChangedText}
+                        </InputData>
+                      </ContainerInput>
+                    </ContainerText>
+                  </AreaDiv>
+                  <ContainerStatusDiff>
+                    <StatusDiff color="#c8f0da" items={itemsDiffOriginal} />
+                    <StatusDiff color="#ffcbbd" items={itemsDiffChanged} />
+                  </ContainerStatusDiff>
+                </ContainerResult>
+              </>
+            )}
+          </Content>
+        </ContainerSection>
+        <RelatedLinks
+          bottom="50px"
+          data={[
+            {
+              name: 'Json lint',
+              link: 'https://www.jsonlint.com/',
+            },
+            {
+              name: 'Json Diff',
+              link: 'https://www.jsondiff.com/',
+            },
+            {
+              name: 'Json Compare',
+              link: 'https://jsoncompare.org/',
+            },
+            {
+              name: 'Diff check json',
+              link: 'https://jsoncompare.org/',
+            },
+          ]}
+        />
+      </div>
     </Wrapper>
   );
 };
