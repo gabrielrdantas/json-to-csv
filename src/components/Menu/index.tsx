@@ -15,7 +15,7 @@ const Menu: React.FC<Props> = ({ itemSelected }) => {
             id="menu-item-json-formatter"
             itemSelected={itemSelected === 0}
           >
-            JSON Formatter
+            Format JSON
           </MenuLink>
         </Link>
       </MenuItem>
@@ -37,7 +37,7 @@ const Menu: React.FC<Props> = ({ itemSelected }) => {
       <MenuItem>
         <Link href="/json-diff-checker" passHref>
           <MenuLink id="menu-item-json-diff" itemSelected={itemSelected === 3}>
-            JSON Diff Checker
+            JSON Diff
           </MenuLink>
         </Link>
       </MenuItem>

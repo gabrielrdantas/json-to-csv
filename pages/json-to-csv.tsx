@@ -235,54 +235,18 @@ const ConvertJsonToCsv: React.FC = () => {
               {csvValue}
             </ResultFormatted>
           </Container>
+
+          <RelatedLinks
+            bottom="-30px"
+            data={[
+              {
+                name: 'Google csv',
+                link: 'https://support.google.com/google-ads/answer/9004364?hl=en',
+              },
+            ]}
+          />
         </Content>
       </ContainerSection>
-      <Content>
-        <ContainerInfo>
-          <SubtitleArticle>Comma-separated values</SubtitleArticle>
-          <Text>
-            CSV format is a fundamental text file type for transferring
-            information between different applications such as a CRM platform
-            and Microsoft Excel.If you work with any data management, be it the
-            most complex or the most basic (like using spreadsheets in your
-            everyday life), you probably heard of the CSV format.Generally
-            speaking, CSV is a format used to store data that can be imported
-            and exported in programs such as Microsoft Excel, Google Sheets,
-            Apple Numbers, OpenOffice Calc and other applications.Also, we often
-            dont know if it is the ideal format for what we need, and what the
-            differences are for other file types.Before getting into the
-            step-by-step steps of importing and exporting CSV files, it is
-            important to understand what this acronym consists of.If you work
-            with any data management, be it the most complex or the most basic
-            (like using spreadsheets in your everyday life), you&apos;ve
-            probably heard of the CSV format.Also, we often don&apos;t know if
-            it is the ideal format for what we need, and what the differences
-            are for other file types.• How to create a CSV file in Excel • How
-            to create a CSV file in Google Sheets • How to open a CSV file in a
-            text editor • How to open a CSV file in a spreadsheet • How to edit
-            a CSV file in a text editor textTHEBefore getting into the
-            step-by-step steps of importing and exporting CSV files, it is
-            important to understand what this acronym consists of. This data
-            could be read in a CSV file separated by commas and line spacing, as
-            in the following example: João,2018,Belo Horizonte Maria,2019,Rio de
-            Janeiro Now that you understand the basic concept of CSV, you You
-            may be wondering: when, after all, do you choose to use this
-            format?That said, the most common CSV usage situation is when you
-            want to export information from one tool and transfer it to another
-            (example: from your CRM software to an Excel spreadsheet, or vice
-            versa).
-          </Text>
-        </ContainerInfo>
-        <RelatedLinks
-          data={[
-            {
-              name: 'Google csv',
-              link: 'https://support.google.com/google-ads/answer/9004364?hl=en',
-            },
-          ]}
-        />
-      </Content>
-      <Footer />
     </Wrapper>
   );
 };
@@ -292,7 +256,7 @@ export default ConvertJsonToCsv;
 const ContainerSection = styled.div`
   width: 100%;
   background: #0f598a;
-  padding: 20px 0 40px;
+  padding: 10px 0 30px;
 `;
 
 const Container = styled.div`

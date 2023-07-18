@@ -11,7 +11,6 @@ import dynamic from 'next/dynamic';
 import GlobalStyle from '../src/styles/global';
 
 const Header = dynamic(import('../src/components/Header'));
-const Footer = dynamic(import('../src/components/Footer'));
 const StatusDiff = dynamic(import('../src/components/StatusDiff'));
 const Wrapper = dynamic(import('../src/components/Wrapper'));
 const Seo = dynamic(import('../src/components/Seo'));
@@ -207,10 +206,10 @@ const DiffChecker: React.FC = () => {
     <Wrapper>
       <GlobalStyle />
       <Seo
-        title="Convert and diff checker json online"
-        description="Checker diff json online, this page is simple, fast and practical!"
-        ogDescription="Checker diff online, this page is simple, fast and practical! Come meet us!"
-        ogTitle="Checker diff simply!"
+        title="Differences between JSON files"
+        description="Compare JSON files and JSON Diff. Here you see differences between JSON files"
+        ogDescription="Compare JSON files and JSON Diff. Here you see differences between JSON files"
+        ogTitle="Differences between JSON files"
         canonical="https://convertjsononline.com/json-diff-checker"
       />
       <Schema
@@ -221,11 +220,11 @@ const DiffChecker: React.FC = () => {
             {
               '@id': `https://convertjsononline.com#webpage`,
               '@type': 'WebPage',
-              name: 'Convert and diff checker json online',
+              name: 'Differences between JSON files',
               image: `https://convertjsononline.com#primaryimage`,
               url: 'https://convertjsononline.com/json-diff-checker',
               description:
-                'Checker diff online, this page is simple, fast and practical!',
+                'Compare JSON files and JSON Diff. Here you see differences between JSON files',
               isPartOf: {
                 '@id': 'Website',
               },
@@ -236,7 +235,7 @@ const DiffChecker: React.FC = () => {
           ],
         }}
       />
-      <Header title="Convert and diff checker json online" itemSelected={3} />
+      <Header title="JSON Diff Online - JSON compare" itemSelected={3} />
       <ContainerSection id="content-data">
         <Content>
           <Container>
@@ -297,41 +296,27 @@ const DiffChecker: React.FC = () => {
           )}
         </Content>
       </ContainerSection>
-      <Content>
-        <ContainerInfo>
-          <SubtitleArticle>Why compare two files?</SubtitleArticle>
-          <Text>
-            A diff tool is used to compare text differences between two text
-            files. If you are a developer, you probably need to use this tool.
-          </Text>
-
-          <Text>
-            The content you want to compare may be in different formats and you
-            can see the highlighted difference in results in seconds.
-          </Text>
-        </ContainerInfo>
-        <RelatedLinks
-          data={[
-            {
-              name: 'Json lint',
-              link: 'https://www.jsonlint.com/',
-            },
-            {
-              name: 'Json Diff',
-              link: 'https://www.jsondiff.com/',
-            },
-            {
-              name: 'Json Compare',
-              link: 'https://jsoncompare.org/',
-            },
-            {
-              name: 'Diff check json',
-              link: 'https://jsoncompare.org/',
-            },
-          ]}
-        />
-      </Content>
-      <Footer />
+      <RelatedLinks
+        bottom="50px"
+        data={[
+          {
+            name: 'Json lint',
+            link: 'https://www.jsonlint.com/',
+          },
+          {
+            name: 'Json Diff',
+            link: 'https://www.jsondiff.com/',
+          },
+          {
+            name: 'Json Compare',
+            link: 'https://jsoncompare.org/',
+          },
+          {
+            name: 'Diff check json',
+            link: 'https://jsoncompare.org/',
+          },
+        ]}
+      />
     </Wrapper>
   );
 };
@@ -428,17 +413,4 @@ const SubtitleContainer = styled.div`
 const ContainerStatusDiff = styled.div`
   display: flex;
   margin-left: 5px;
-`;
-
-const ContainerInfo = styled.article`
-  margin: 35px 0;
-`;
-
-const Text = styled.p`
-  margin: 0 0 20px;
-  line-height: 25px;
-`;
-
-const SubtitleArticle = styled.h2`
-  margin: 35px 0;
 `;

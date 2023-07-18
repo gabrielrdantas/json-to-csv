@@ -100,10 +100,10 @@ const JsonFormatter: React.FC = () => {
     <Wrapper>
       <GlobalStyle />
       <Seo
-        title="Convert and format json to csv, pdf and diff checker"
-        description="Compare json online, format json, json diff online, json compare online and checker your files"
-        ogDescription="Compare json online, format json, json diff online, json compare online and checker your files"
-        ogTitle="Convert and format json to csv, pdf and diff checker"
+        title="Format Javascript to JSON file"
+        description="Validate and format JSON files online."
+        ogDescription="Validate and format JSON files online."
+        ogTitle="Format Javascript to JSON file"
         canonical="https://convertjsononline.com"
       />
       <Schema
@@ -114,11 +114,10 @@ const JsonFormatter: React.FC = () => {
             {
               '@id': `https://convertjsononline.com#webpage`,
               '@type': 'WebPage',
-              name: 'Formatter and convert json online',
+              name: 'Format JSON online',
               image: `https://convertjsononline.com#primaryimage`,
               url: 'https://convertjsononline.com',
-              description:
-                'Formatter json online, this page is simple, fast and practical!',
+              description: 'Validate and format JSON files online.',
               isPartOf: {
                 '@id': 'Website',
               },
@@ -129,7 +128,7 @@ const JsonFormatter: React.FC = () => {
           ],
         }}
       />
-      <Header title="Convert and formatter json" itemSelected={0} />
+      <Header title="Format JSON Online" itemSelected={0} />
 
       <ContainerSection>
         <Content>
@@ -167,6 +166,7 @@ const JsonFormatter: React.FC = () => {
           </Container>
         </Content>
         <RelatedLinks
+          bottom="-100px"
           data={[
             {
               name: 'Convert Javascript Object to JSON',
@@ -188,11 +188,6 @@ const JsonFormatter: React.FC = () => {
 };
 
 export default JsonFormatter;
-
-const ContainerRelatedLinks = styled.div`
-  position: absolute;
-  bottom: 0;
-`;
 
 const MenuOptionsContainer = styled.div`
   margin: 0;
@@ -256,18 +251,6 @@ const ResultFormatted = styled.pre`
     width: 90%;
     flex: 1;
   }
-`;
-
-const ContainerInfo = styled.article`
-  margin: 35px 0;
-`;
-
-const Text = styled.p`
-  line-height: 25px;
-`;
-
-const SubtitleArticle = styled.h2`
-  margin: 35px 0;
 `;
 
 const Label = styled.label`

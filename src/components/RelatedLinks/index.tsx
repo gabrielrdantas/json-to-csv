@@ -3,15 +3,16 @@ import styled from 'styled-components';
 
 interface contentProp {
   data: linkProps[];
+  bottom: string;
 }
 
 interface linkProps {
   name: string;
   link: string;
 }
-const RelatedLinks: React.FC<contentProp> = ({ data }) => {
+const RelatedLinks: React.FC<contentProp> = ({ data, bottom }) => {
   return (
-    <Container>
+    <Container bottom={bottom}>
       <Subtitle>Related Links</Subtitle>
       <Ul>
         {data.map(item => {
@@ -28,19 +29,22 @@ const RelatedLinks: React.FC<contentProp> = ({ data }) => {
   );
 };
 
-const Container = styled.div`
+const Container = styled.div<{ bottom: string }>`
   margin: 0 0 20px;
   position: absolute;
   left: 50%;
   margin-left: -400px;
-  bottom: -100px;
+  ${({ bottom }) => bottom && `bottom: ${bottom}`};
 `;
 const Ul = styled.ul`
   display: flex;
   list-style: none;
 `;
-const Subtitle = styled.h3`
+const Subtitle = styled.strong`
+  display: block;
+  font-weight: 500;
   margin: 35px 0 20px;
+  font-size: 20px;
 `;
 const Link = styled.a`
   color: #333;
