@@ -313,12 +313,20 @@ const DiffChecker: React.FC = () => {
         <RelatedLinks
           data={[
             {
-              name: 'diffchecker',
-              link: 'https://www.diffchecker.com',
+              name: 'Json lint',
+              link: 'https://www.jsonlint.com/',
             },
             {
-              name: 'diff',
-              link: 'https://git-scm.com/docs/git-diff',
+              name: 'Json Diff',
+              link: 'https://www.jsondiff.com/',
+            },
+            {
+              name: 'Json Compare',
+              link: 'https://jsoncompare.org/',
+            },
+            {
+              name: 'Diff check json',
+              link: 'https://jsoncompare.org/',
             },
           ]}
         />

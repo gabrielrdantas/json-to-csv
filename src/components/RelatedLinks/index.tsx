@@ -30,6 +30,10 @@ const RelatedLinks: React.FC<contentProp> = ({ data }) => {
 
 const Container = styled.div`
   margin: 0 0 20px;
+  position: absolute;
+  left: 50%;
+  margin-left: -400px;
+  bottom: -100px;
 `;
 const Ul = styled.ul`
   display: flex;
