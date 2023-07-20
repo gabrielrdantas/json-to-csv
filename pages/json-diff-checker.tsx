@@ -296,28 +296,28 @@ const DiffChecker: React.FC = () => {
               </>
             )}
           </Content>
+          <RelatedLinks
+            bottom="-100px"
+            data={[
+              {
+                name: 'Json lint',
+                link: 'https://www.jsonlint.com/',
+              },
+              {
+                name: 'Json Diff',
+                link: 'https://www.jsondiff.com/',
+              },
+              {
+                name: 'Json Compare',
+                link: 'https://jsoncompare.org/',
+              },
+              {
+                name: 'Diff check json',
+                link: 'https://jsoncompare.org/',
+              },
+            ]}
+          />
         </ContainerSection>
-        <RelatedLinks
-          bottom="50px"
-          data={[
-            {
-              name: 'Json lint',
-              link: 'https://www.jsonlint.com/',
-            },
-            {
-              name: 'Json Diff',
-              link: 'https://www.jsondiff.com/',
-            },
-            {
-              name: 'Json Compare',
-              link: 'https://jsoncompare.org/',
-            },
-            {
-              name: 'Diff check json',
-              link: 'https://jsoncompare.org/',
-            },
-          ]}
-        />
       </div>
     </Wrapper>
   );
@@ -328,7 +328,10 @@ export default DiffChecker;
 const ContainerSection = styled.div`
   width: 100%;
   background: #0f598a;
-  padding: 20px 0 40px;
+  padding: 10px 0px 30px;
+  margin: 0;
+  position: absolute;
+  top: 80px;
 `;
 
 const Container = styled.div`
