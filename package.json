@@ -30,6 +30,7 @@
     "web-vitals": "^2.1.2"
   },
   "scripts": {
+    "analyze": "ANALYZE=true next build",
     "dev": "next dev",
     "build": "next build",
     "export": "next build && next export",
@@ -55,6 +56,7 @@
     ]
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "^13.4.10",
     "@types/pdfmake": "0.1.19",
     "@types/react-helmet": "^6.1.5",
     "@types/react-router-dom": "^5.3.2",

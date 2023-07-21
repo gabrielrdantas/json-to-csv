@@ -12,7 +12,6 @@ import styled from 'styled-components';
 import GlobalStyle from '../src/styles/global';
 
 const Header = dynamic(import('../src/components/Header'));
-const Footer = dynamic(import('../src/components/Footer'));
 const MenuOptions = dynamic(import('../src/components/MenuOptions'));
 const Wrapper = dynamic(import('../src/components/Wrapper'));
 const Seo = dynamic(import('../src/components/Seo'));
@@ -242,7 +241,7 @@ const ConvertJsonToCsv: React.FC = () => {
             </Container>
 
             <RelatedLinks
-              bottom="-30px"
+              bottom="-100px"
               data={[
                 {
                   name: 'Google csv',
@@ -263,6 +262,8 @@ const ContainerSection = styled.div`
   width: 100%;
   background: #0f598a;
   padding: 10px 0 30px;
+  position: absolute;
+  top: 80px;
 `;
 
 const Container = styled.div`
@@ -302,18 +303,6 @@ const Subtitle = styled.h2`
   font-size: 26px;
   color: #fff;
   margin: 20px 0;
-`;
-
-const ContainerInfo = styled.article`
-  margin: 35px 0;
-`;
-
-const Text = styled.p`
-  line-height: 25px;
-`;
-
-const SubtitleArticle = styled.h2`
-  margin: 35px 0;
 `;
 
 const Input = styled.input<{ disabledInput: boolean }>`
