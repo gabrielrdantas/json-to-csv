@@ -186,7 +186,7 @@ const ConvertJsonToCsv: React.FC = () => {
       <div>
         <ContainerSection id="content-data">
           <Content>
-            <Subtitle>Input JSON</Subtitle>
+            <Label htmlFor="input-data-csv">Input JSON</Label>
             <Container>
               <InputData
                 id="input-data-csv"
@@ -196,11 +196,11 @@ const ConvertJsonToCsv: React.FC = () => {
             </Container>
 
             <ContainerFilter>
-              <Subtitle>Output CSV</Subtitle>
+              <Label htmlFor="result-filter-csv">Output CSV</Label>
               <FormFilter>
-                <Label disabledInput={filterDisabled} htmlFor="input-csv-json">
+                <Subtitle disabledInput={filterDisabled}>
                   Filter field:
-                </Label>
+                </Subtitle>
                 <Input
                   ref={inputRef}
                   disabledInput={filterDisabled}
@@ -299,10 +299,11 @@ const ResultFormatted = styled.pre`
   overflow: auto;
 `;
 
-const Subtitle = styled.h2`
+const Label = styled.label`
   font-size: 26px;
   color: #fff;
   margin: 20px 0;
+  display: block;
 `;
 
 const Input = styled.input<{ disabledInput: boolean }>`
@@ -322,7 +323,7 @@ const ContainerFilter = styled.div`
   margin: 20px 0 0;
 `;
 
-const Label = styled.label<{ disabledInput: boolean }>`
+const Subtitle = styled.label<{ disabledInput: boolean }>`
   color: #fff;
   margin: 0 15px 0 0;
   ${({ disabledInput }) => disabledInput && `opacity: 0.5;`}

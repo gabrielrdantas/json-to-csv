@@ -109,7 +109,7 @@ const ConvertJsonToPdf: React.FC = () => {
       <div>
         <ContainerSection id="content-data">
           <Content>
-            <Subtitle>Insert JSON</Subtitle>
+            <Label htmlFor="data-pdf-json">Insert JSON</Label>
             <Container>
               <InputData id="data-pdf-json" ref={ref} onChange={onChangeJson} />
             </Container>
@@ -166,8 +166,9 @@ const InputData = styled.textarea`
   padding: 20px;
   border-radius: 20px;
 `;
-const Subtitle = styled.h2`
+const Label = styled.label`
   font-size: 26px;
   color: #fff;
   margin: 20px 0;
+  display: block;
 `;

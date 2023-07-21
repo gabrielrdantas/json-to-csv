@@ -242,8 +242,8 @@ const DiffChecker: React.FC = () => {
             <Container>
               <AreaDiv>
                 <SubtitleContainer>
-                  <Subtitle>Original JSON</Subtitle>
-                  <Subtitle>Other JSON</Subtitle>
+                  <Label htmlFor="original-json-diff">Original JSON</Label>
+                  <Label htmlFor="other-json-diff">Other JSON</Label>
                 </SubtitleContainer>
                 <ContainerText>
                   <ContainerInput>
@@ -271,8 +271,12 @@ const DiffChecker: React.FC = () => {
                 <ContainerResult>
                   <AreaDiv>
                     <SubtitleContainer>
-                      <Subtitle>Result Original JSON</Subtitle>
-                      <Subtitle>Result Other JSON</Subtitle>
+                      <Label htmlFor="result-original-json-diff">
+                        Result Original JSON
+                      </Label>
+                      <Label htmlFor="result-other-json-diff">
+                        Result Other JSON
+                      </Label>
                     </SubtitleContainer>
                     <ContainerText>
                       <ContainerInput>
@@ -381,11 +385,12 @@ const InputDataTextarea = styled.textarea`
   padding: 20px;
   min-height: 600px;
 `;
-const Subtitle = styled.h2`
+const Label = styled.label`
   font-size: 26px;
   color: #fff;
   margin: 20px 0;
   width: 50%;
+  display: block;
 `;
 
 const OriginalDiv = styled.div`
