@@ -324,9 +324,9 @@ const ContainerFilter = styled.div`
 `;
 
 const Subtitle = styled.label<{ disabledInput: boolean }>`
-  color: #fff;
+  color: #fafafa;
   margin: 0 15px 0 0;
-  ${({ disabledInput }) => disabledInput && `opacity: 0.5;`}
+  ${({ disabledInput }) => disabledInput && `opacity: 0.8;`}
   ${({ disabledInput }) => disabledInput && `pointer-events: none;`}
 `;
 const FormFilter = styled.form`
