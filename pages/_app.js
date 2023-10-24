@@ -11,12 +11,6 @@ function MyApp({ Component, pageProps }) {
                 <link rel="icon" href="./favicon.ico" />
                 <meta name="viewport" content="width=device-width, initial-scale=1" />
                 <meta name="theme-color" content="#FF9000" />
-                <meta
-                  name="description"
-                  content="Convert to json, formatter json, convert json to csv, json to pdf and checker your json files"
-                />
-
-                <title>Convert and formatter json to csv, pdf and diff checker</title>
                 
                 <script dangerouslySetInnerHTML={{
                         __html: `

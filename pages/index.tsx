@@ -169,15 +169,15 @@ const JsonFormatter: React.FC = () => {
             bottom="-100px"
             data={[
               {
-                name: 'Convert Javascript Object to JSON',
+                name: 'Javascript Object to JSON',
                 link: 'https://www.convertsimple.com/convert-javascript-to-json/',
               },
               {
-                name: 'Converting JavaScript Object to JSON',
+                name: 'JavaScript Object to JSON',
                 link: 'https://reqbin.com/code/javascript/x1ezvres/javascript-object-to-json-example#:~:text=To%20convert%20a%20JavaScript%20object,into%20a%20JSON%20data%20string.',
               },
               {
-                name: 'How to Convert JS Object to JSON',
+                name: 'JS Object to JSON',
                 link: 'https://www.tutorialrepublic.com/faq/how-to-convert-js-object-to-json-string.php',
               },
             ]}
