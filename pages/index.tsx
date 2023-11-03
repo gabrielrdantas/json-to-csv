@@ -204,6 +204,10 @@ const JsonFormatter: React.FC = () => {
                 name: 'JS Object to JSON',
                 link: 'https://www.tutorialrepublic.com/faq/how-to-convert-js-object-to-json-string.php',
               },
+              {
+                name: 'Source code',
+                link: 'https://github.com/gabrielrdantas/json-to-csv',
+              },
             ]}
           />
         </Content>
