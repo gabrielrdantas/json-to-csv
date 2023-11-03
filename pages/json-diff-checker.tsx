@@ -300,6 +300,29 @@ const DiffChecker: React.FC = () => {
               </>
             )}
           </Content>
+        </ContainerSection>
+        <Content>
+          <Paragraph>
+            JSON (JavaScript Object Notation) is a widely used and popular
+            format for structuring and exchanging data. It offers a lightweight,
+            human-readable, and easy-to-parse way of representing information.
+            JSON is commonly used in a variety of applications, such as web
+            services, configuration files, and data storage. The basic structure
+            of JSON is a collection of key-value pairs. Each key is a string,
+            and its corresponding value can be a string, number, boolean, null,
+            another JSON object, or an array of values. Here`s an example of a
+            simple JSON object: In this example, we have three key-value pairs:
+            name, age, and city. The keys are enclosed in double quotes, and the
+            values can be of different data types. JSON arrays are used to store
+            an ordered list of values. Here`s an example of a JSON array: In
+            this case, fruits is the key, and its value is an array containing
+            three strings. JSON is a flexible and versatile format that is
+            commonly used in web development for data exchange between the
+            server and client, as well as for configuring various applications
+            and services. It is easy to understand, which makes it a popular
+            choice for both developers and machines to work with structured
+            data.
+          </Paragraph>
           <RelatedLinks
             bottom="-100px"
             data={[
@@ -321,7 +344,7 @@ const DiffChecker: React.FC = () => {
               },
             ]}
           />
-        </ContainerSection>
+        </Content>
       </div>
     </Wrapper>
   );
@@ -334,8 +357,6 @@ const ContainerSection = styled.div`
   background: #0f598a;
   padding: 10px 0px 30px;
   margin: 0;
-  position: absolute;
-  top: 80px;
 `;
 
 const Container = styled.div`
@@ -423,4 +444,8 @@ const SubtitleContainer = styled.div`
 const ContainerStatusDiff = styled.div`
   display: flex;
   margin-left: 5px;
+`;
+
+const Paragraph = styled.p`
+  margin-top: 30px;
 `;

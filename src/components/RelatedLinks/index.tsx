@@ -30,11 +30,11 @@ const RelatedLinks: React.FC<contentProp> = ({ data, bottom }) => {
 };
 
 const Container = styled.div<{ bottom: string }>`
-  margin: 0 0 20px;
-  position: absolute;
-  left: 50%;
-  margin-left: -400px;
-  ${({ bottom }) => bottom && `bottom: ${bottom}`};
+  // margin: 0 0 20px;
+  // position: absolute;
+  // left: 50%;
+  // margin-left: -400px;
+  // ${({ bottom }) => bottom && `bottom: ${bottom}`};
 `;
 const Ul = styled.ul`
   display: flex;
