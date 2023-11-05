@@ -18,15 +18,6 @@ const Schema = dynamic(import('../src/components/Schema'));
 const RelatedLinks = dynamic(import('../src/components/RelatedLinks'));
 const Content = dynamic(import('../src/components/Content'));
 
-// import Header from '../src/components/Header';
-// import Footer from '../src/components/Footer';
-// import MenuOptions from '../src/components/MenuOptions';
-// import Wrapper from '../src/components/Wrapper';
-// import Seo from '../src/components/Seo';
-// import Schema from '../src/components/Schema';
-// import RelatedLinks from '../src/components/RelatedLinks';
-// import Content from '../src/components/Content';
-
 const JsonFormatter: React.FC = () => {
   const [jsonValue, setJsonValue] = useState('');
   const ref = useRef<HTMLTextAreaElement>(null);
@@ -102,9 +93,6 @@ const JsonFormatter: React.FC = () => {
       <Seo
         title="Format Javascript to JSON file"
         description="Validate and format JSON files online."
-        ogDescription="Validate and format JSON files online."
-        ogTitle="Format Javascript to JSON file"
-        canonical="https://convertjsononline.com"
       />
       <Schema
         data={{

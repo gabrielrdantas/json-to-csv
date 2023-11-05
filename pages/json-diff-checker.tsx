@@ -17,16 +17,6 @@ const Seo = dynamic(import('../src/components/Seo'));
 const Schema = dynamic(import('../src/components/Schema'));
 const RelatedLinks = dynamic(import('../src/components/RelatedLinks'));
 const Content = dynamic(import('../src/components/Content'));
-
-// import Header from '../src/components/Header';
-// import Footer from '../src/components/Footer';
-// import Content from '../src/components/Content';
-// import StatusDiff from '../src/components/StatusDiff';
-// import Seo from '../src/components/Seo';
-// import RelatedLinks from '../src/components/RelatedLinks';
-// import Schema from '../src/components/Schema';
-// import Wrapper from '../src/components/Wrapper';
-
 interface statusDiff {
   isDiff: boolean;
   size: number;
@@ -208,9 +198,6 @@ const DiffChecker: React.FC = () => {
       <Seo
         title="Differences between JSON files"
         description="Compare JSON files and JSON Diff. Here you see differences between JSON files"
-        ogDescription="Compare JSON files and JSON Diff. Here you see differences between JSON files"
-        ogTitle="Differences between JSON files"
-        canonical="https://convertjsononline.com/json-diff-checker"
       />
       <Schema
         data={{

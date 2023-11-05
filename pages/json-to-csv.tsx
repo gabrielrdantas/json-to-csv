@@ -18,16 +18,6 @@ const Seo = dynamic(import('../src/components/Seo'));
 const Schema = dynamic(import('../src/components/Schema'));
 const RelatedLinks = dynamic(import('../src/components/RelatedLinks'));
 const Content = dynamic(import('../src/components/Content'));
-
-// import Header from '../src/components/Header';
-// import Footer from '../src/components/Footer';
-// import Content from '../src/components/Content';
-// import MenuOptions from '../src/components/MenuOptions';
-// import Seo from '../src/components/Seo';
-// import RelatedLinks from '../src/components/RelatedLinks';
-// import Schema from '../src/components/Schema';
-// import Wrapper from '../src/components/Wrapper';
-
 declare global {
   interface Navigator {
     msSaveBlob?: (blob: unknown, defaultName?: string) => boolean;
@@ -155,9 +145,6 @@ const ConvertJsonToCsv: React.FC = () => {
       <Seo
         title="Convert JSON to CSV online"
         description="Convert JSON to CSV online, this page is simple, fast and practical!"
-        ogDescription="Convert JSON to CSV online, this page is simple, fast and practical! Come meet us!"
-        ogTitle="Convering JSON to CSV simply!"
-        canonical="https://convertjsononline.com/json-to-csv"
       />
       <Schema
         data={{

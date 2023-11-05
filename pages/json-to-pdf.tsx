@@ -14,14 +14,6 @@ const Schema = dynamic(import('../src/components/Schema'));
 const RelatedLinks = dynamic(import('../src/components/RelatedLinks'));
 const Content = dynamic(import('../src/components/Content'));
 
-// import Header from '../src/components/Header';
-// import Footer from '../src/components/Footer';
-// import Content from '../src/components/Content';
-// import RelatedLinks from '../src/components/RelatedLinks';
-// import Seo from '../src/components/Seo';
-// import Schema from '../src/components/Schema';
-// import Wrapper from '../src/components/Wrapper';
-
 const ConvertJsonToPdf: React.FC = () => {
   const ref = useRef<HTMLTextAreaElement>(null);
 
@@ -78,9 +70,6 @@ const ConvertJsonToPdf: React.FC = () => {
       <Seo
         title="Convert JSON to PDF online"
         description="Convert JSON to PDF online, this page is simple, fast and practical!"
-        ogDescription="Convert JSON to PDF online, this page is simple, fast and practical! Come meet us!"
-        ogTitle="Convering JSON to PDF simply!"
-        canonical="https://convertjsononline.com/json-to-pdf"
       />
       <Schema
         data={{
