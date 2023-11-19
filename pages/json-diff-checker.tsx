@@ -196,7 +196,7 @@ const DiffChecker: React.FC = () => {
     <Wrapper>
       <GlobalStyle />
       <Seo
-        title="Differences between JSON files"
+        title="JSON compare online - Differences between files"
         description="Compare JSON files and JSON Diff. Here you see differences between JSON files"
       />
       <Schema
@@ -207,7 +207,7 @@ const DiffChecker: React.FC = () => {
             {
               '@id': `https://convertjsononline.com#webpage`,
               '@type': 'WebPage',
-              name: 'Differences between JSON files',
+              name: 'JSON compare online - Differences between files',
               image: `https://convertjsononline.com#primaryimage`,
               url: 'https://convertjsononline.com/json-diff-checker',
               description:
