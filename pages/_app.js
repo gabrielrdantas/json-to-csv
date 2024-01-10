@@ -1,5 +1,5 @@
 import Head from 'next/head';
-// import Script from 'next/script';
+import Script from 'next/script';
 
 
 function MyApp({ Component, pageProps }) {
@@ -33,10 +33,10 @@ function MyApp({ Component, pageProps }) {
                     }}>
                 </script>
              </Head>
-             {/* <Script 
+             <Script 
                   strategy="beforeInteractive" 
-                  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6901180360285673" /> */}
-            {/* <Script src="https://polyfill.io/v3/polyfill.min.js" strategy="beforeInteractive" /> */}
+                  src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6901180360285673" />
+            <Script src="https://polyfill.io/v3/polyfill.min.js" strategy="beforeInteractive" />
             <noscript>
               <iframe
               src="https://www.googletagmanager.com/ns.html?id=GTM-WL2PM76"
