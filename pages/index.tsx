@@ -93,6 +93,7 @@ const JsonFormatter: React.FC = () => {
       <Seo
         title="Format Javascript to JSON file"
         description="Validate and format JSON files online."
+        canonical="https://www.convertjsononline.com/"
       />
       <Schema
         data={{

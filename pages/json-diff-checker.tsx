@@ -198,6 +198,7 @@ const DiffChecker: React.FC = () => {
       <Seo
         title="JSON compare online - Differences between files"
         description="Compare JSON files and JSON Diff. Here you see differences between JSON files"
+        canonical="https://www.convertjsononline.com/json-diff-checker"
       />
       <Schema
         data={{

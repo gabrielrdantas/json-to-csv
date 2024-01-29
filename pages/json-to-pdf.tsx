@@ -70,6 +70,7 @@ const ConvertJsonToPdf: React.FC = () => {
       <Seo
         title="Convert JSON to PDF online"
         description="Convert JSON to PDF online, this page is simple, fast and practical!"
+        canonical="https://www.convertjsononline.com/json-to-pdf"
       />
       <Schema
         data={{
