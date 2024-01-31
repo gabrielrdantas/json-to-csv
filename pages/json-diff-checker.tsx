@@ -291,25 +291,22 @@ const DiffChecker: React.FC = () => {
         </ContainerSection>
         <Content>
           <Paragraph>
-            JSON (JavaScript Object Notation) is a widely used and popular
-            format for structuring and exchanging data. It offers a lightweight,
-            human-readable, and easy-to-parse way of representing information.
-            JSON is commonly used in a variety of applications, such as web
-            services, configuration files, and data storage. The basic structure
-            of JSON is a collection of key-value pairs. Each key is a string,
-            and its corresponding value can be a string, number, boolean, null,
-            another JSON object, or an array of values. Here`s an example of a
-            simple JSON object: In this example, we have three key-value pairs:
-            name, age, and city. The keys are enclosed in double quotes, and the
-            values can be of different data types. JSON arrays are used to store
-            an ordered list of values. Here`s an example of a JSON array: In
-            this case, fruits is the key, and its value is an array containing
-            three strings. JSON is a flexible and versatile format that is
-            commonly used in web development for data exchange between the
-            server and client, as well as for configuring various applications
-            and services. It is easy to understand, which makes it a popular
-            choice for both developers and machines to work with structured
-            data.
+            If youre referring to the differences between the content of
+            different JSON files, it depends on the specific content and
+            structure of those files. JSON (JavaScript Object Notation) is a
+            lightweight data interchange format, and differences between JSON
+            files can arise from changes in the data, structure, or both. Here
+            are some common ways JSON files might differ: Data Values: Different
+            values for the same keys: The actual data within the JSON files may
+            be different. Missing or additional data: One file might contain
+            data that the other does not, or vice versa. Structure: Variations
+            in the arrangement of objects and arrays: The nesting and ordering
+            of objects and arrays may differ. Changes in key names or structure:
+            Keys or structures may be added, removed, or modified. Formatting:
+            Differences in whitespace and indentation: JSON files may have
+            different formatting styles, but this doesnt affect the data itself.
+            Data Types: Differences in data types: For instance, a value might
+            be an integer in one file and a string in another.
           </Paragraph>
           <RelatedLinks
             bottom="-100px"
@@ -361,12 +358,13 @@ const ContainerResult = styled.div`
 `;
 
 const ContainerInput = styled.div`
-  background: #fff;
+  background: #f1f1f1;
   min-height: 600px;
   width: 50%;
 `;
 
 const InputData = styled.pre`
+  background: #f1f1f1;
   border: none;
   border-radius: 20px;
   border-right: 1px solid #ccc;
@@ -382,6 +380,7 @@ const InputData = styled.pre`
 `;
 
 const InputDataTextarea = styled.textarea`
+  background: #f1f1f1;
   border: none;
   border-radius: 20px;
   border-right: 1px solid #ccc;
